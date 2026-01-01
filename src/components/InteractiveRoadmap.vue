@@ -311,7 +311,7 @@ const selectMilestone = (milestone: Milestone) => {
 
 const shareMilestone = (milestone: Milestone) => {
   const text = `Help us reach ${milestone.target} citizens to unlock: ${milestone.title}! Join e-Maghreb digital nation.`
-  const url = `https://www.reddit.com/r/e-Maghreb/`
+  const url = `https://www.reddit.com/r/eMaghreb/`
 
   if (navigator.share) {
     navigator.share({

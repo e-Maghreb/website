@@ -6,7 +6,7 @@
           Become a Founding Citizen
         </h2>
         <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-          Join our digital nation and help shape the future of e-Maghreb. Registration opens on January 1, 2026.
+          Join our digital nation and help shape the future of e-Maghreb. Registration opens on February 17, 2026.
         </p>
       </div>
 
@@ -67,7 +67,7 @@
       <!-- CTA -->
       <div class="text-center">
         <p class="text-lg text-gray-600 mb-6">
-          Registration opens on <span class="font-bold text-maghreb-green">January 1, 2026</span>
+          Registration opens on <span class="font-bold text-maghreb-green">February 17, 2026</span>
         </p>
         <button
           @click="handleCtaClick"
@@ -93,7 +93,7 @@ const emit = defineEmits<{
 }>()
 
 // Check if registration is open (January 1, 2026)
-const launchDate = new Date('2026-01-01T00:00:00')
+const launchDate = new Date('2026-02-17T00:00:00')
 const isRegistrationOpen = computed(() => new Date() >= launchDate)
 
 interface Step {

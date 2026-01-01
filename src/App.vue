@@ -60,14 +60,6 @@
         <JoinSection @cta-click="handleJoinClick" />
       </section>
 
-      <!-- Launch Section -->
-      <section id="launch">
-        <LaunchSection
-          launch-date="January 1, 2026"
-          :target-date="launchDate"
-          @signup="handleSignup"
-        />
-      </section>
     </main>
 
     <!-- Footer -->
@@ -94,7 +86,6 @@ import InteractiveRoadmap from './components/InteractiveRoadmap.vue'
 import CommunityIntegration from './components/CommunityIntegration.vue'
 import SocialProof from './components/SocialProof.vue'
 import JoinSection from './components/JoinSection.vue'
-import LaunchSection from './components/LaunchSection.vue'
 import FooterSection from './components/FooterSection.vue'
 import { useCommunityMetrics } from './composables/useCommunityMetrics'
 import { useAccessibility } from './composables/useAccessibility'
@@ -104,9 +95,6 @@ import { useAccessibility } from './composables/useAccessibility'
 const { metrics, trackEvent } = useCommunityMetrics()
 const { accessibility, announceToScreenReader } = useAccessibility()
 
-// Launch date
-const launchDate = new Date('2026-01-01T00:00:00')
-
 // Navigation items
 const navItems = [
   { text: 'Home', href: '#hero' },
@@ -115,7 +103,6 @@ const navItems = [
   { text: 'Roadmap', href: '#roadmap' },
   { text: 'Stories', href: '#social-proof' },
   { text: 'Join', href: '#join' },
-  { text: 'Launch', href: '#launch' }
 ]
 
 // Scroll to top functionality
@@ -142,15 +129,9 @@ const handleScroll = () => {
 const handleJoinClick = () => {
   trackEvent('cta_click', { action: 'join_community', source: 'navigation' })
   // In a real application, this would open a registration modal or redirect to a signup page
-  alert('Registration opens on January 1, 2026! Join our waitlist to be notified.')
+  alert('Registration opens on February 17, 2026! Join our waitlist to be notified.')
 }
 
-const handleSignup = (email: string) => {
-  trackEvent('signup', { email: email.substring(0, 3) + '...', source: 'launch_section' })
-  console.log('User signed up with email:', email)
-  // In a real application, this would send the email to your backend
-  alert(`Thank you for signing up with ${email}! You'll receive updates about our launch.`)
-}
 
 // Lifecycle
 onMounted(() => {
@@ -177,7 +158,7 @@ body {
   scroll-margin-top: 0;
 }
 
-#about, #community, #roadmap, #social-proof, #join, #launch {
+#about, #community, #roadmap, #social-proof, #join {
   scroll-margin-top: 80px;
 }
 

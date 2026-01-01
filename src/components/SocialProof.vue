@@ -347,7 +347,7 @@ const openStory = (story: UserStory) => {
 }
 
 const joinCommunity = () => {
-  window.open('https://www.reddit.com/r/e-Maghreb/', '_blank')
+  window.open('https://www.reddit.com/r/eMaghreb/', '_blank')
 }
 
 const shareStory = (story?: UserStory) => {
@@ -355,7 +355,7 @@ const shareStory = (story?: UserStory) => {
     ? `Check out ${story.name}'s inspiring story in e-Maghreb community! ${story.excerpt}`
     : 'Join e-Maghreb and share your story with our growing digital nation!'
 
-  const url = 'https://www.reddit.com/r/e-Maghreb/'
+  const url = 'https://www.reddit.com/r/eMaghreb/'
 
   if (navigator.share) {
     navigator.share({

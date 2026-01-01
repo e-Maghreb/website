@@ -52,7 +52,7 @@
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://www.reddit.com/r/e-Maghreb/"
+              href="https://www.reddit.com/r/eMaghreb/"
               target="_blank"
               rel="noopener noreferrer"
               class="bg-maghreb-red hover:bg-maghreb-red/90 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
@@ -159,12 +159,12 @@ const sharePlatforms: SharePlatform[] = [
   {
     name: 'Facebook',
     icon: Facebook,
-    url: 'https://www.facebook.com/sharer/sharer.php?u=https://www.reddit.com/r/e-Maghreb/'
+    url: 'https://www.facebook.com/sharer/sharer.php?u=https://www.reddit.com/r/eMaghreb/'
   },
   {
     name: 'Twitter',
     icon: Twitter,
-    url: 'https://twitter.com/intent/tweet?text=Join%20e-Maghreb%20Reddit%20community%20-%20a%20digital%20nation%20for%20Maghrebi%20citizens!&url=https://www.reddit.com/r/e-Maghreb/'
+    url: 'https://twitter.com/intent/tweet?text=Join%20e-Maghreb%20Reddit%20community%20-%20a%20digital%20nation%20for%20Maghrebi%20citizens!&url=https://www.reddit.com/r/eMaghreb/'
   },
   {
     name: 'Copy Link',
@@ -174,7 +174,7 @@ const sharePlatforms: SharePlatform[] = [
   {
     name: 'Email',
     icon: Mail,
-    url: 'mailto:?subject=Join e-Maghreb Community&body=Check out e-Maghreb Reddit community: https://www.reddit.com/r/e-Maghreb/'
+    url: 'mailto:?subject=Join e-Maghreb Community&body=Check out e-Maghreb Reddit community: https://www.reddit.com/r/eMaghreb/'
   }
 ]
 
@@ -189,7 +189,7 @@ const fetchRedditData = async () => {
     await new Promise(resolve => setTimeout(resolve, 1000))
 
     // Update with real data when Reddit API is available
-    // This would typically come from: https://www.reddit.com/r/e-Maghreb/about.json
+    // This would typically come from: https://www.reddit.com/r/eMaghreb/about.json
   } catch (error) {
     console.error('Error fetching Reddit data:', error)
   }
@@ -205,7 +205,7 @@ const closeShareModal = () => {
 
 const shareOnPlatform = (platform: SharePlatform) => {
   if (platform.url === 'copy') {
-    navigator.clipboard.writeText('https://www.reddit.com/r/e-Maghreb/')
+    navigator.clipboard.writeText('https://www.reddit.com/r/eMaghreb/')
     alert('Link copied to clipboard!')
   } else {
     window.open(platform.url, '_blank', 'width=600,height=400')
