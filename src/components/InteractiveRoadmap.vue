@@ -9,7 +9,7 @@
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
           Watch our digital nation grow and unlock new features as we reach community milestones
         </p>
-        
+
         <!-- Community Progress Overview -->
         <div class="mt-8 bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
           <div class="flex items-center justify-between mb-4">
@@ -17,7 +17,7 @@
             <span class="text-2xl font-bold text-maghreb-green">{{ currentMembers }} Citizens</span>
           </div>
           <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
-            <div 
+            <div
               class="bg-gradient-to-r from-maghreb-green to-maghreb-blue h-4 rounded-full transition-all duration-1000 ease-out"
               :style="{ width: progressPercentage + '%' }"
             ></div>
@@ -34,23 +34,23 @@
       <div class="relative">
         <!-- Timeline Line -->
         <div class="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gray-300"></div>
-        
+
         <!-- Milestone Cards -->
         <div class="space-y-12">
-          <div 
-            v-for="(milestone, index) in milestones" 
+          <div
+            v-for="(milestone, index) in milestones"
             :key="milestone.id"
             class="relative flex items-center"
             :class="{ 'flex-row-reverse': index % 2 === 1 }"
           >
             <!-- Milestone Card -->
-            <div 
+            <div
               class="w-5/12 cursor-pointer transition-all duration-300 hover:scale-105"
               @click="selectMilestone(milestone)"
               @mouseenter="hoveredMilestone = milestone.id"
               @mouseleave="hoveredMilestone = null"
             >
-              <div 
+              <div
                 class="bg-white rounded-lg shadow-lg p-6 border-2 transition-all duration-300"
                 :class="{
                   'border-maghreb-green shadow-xl': milestone.achieved,
@@ -70,7 +70,7 @@
                 <!-- Milestone Header -->
                 <div class="flex items-center justify-between mb-4">
                   <h3 class="text-xl font-bold text-maghreb-dark">{{ milestone.title }}</h3>
-                  <span 
+                  <span
                     class="px-3 py-1 rounded-full text-sm font-medium"
                     :class="{
                       'bg-maghreb-green text-white': milestone.achieved,
@@ -86,15 +86,15 @@
 
                 <!-- Features Preview -->
                 <div class="space-y-2">
-                  <div 
-                    v-for="feature in milestone.features.slice(0, 3)" 
+                  <div
+                    v-for="feature in milestone.features.slice(0, 3)"
                     :key="feature"
                     class="flex items-center text-sm"
                   >
-                    <svg 
-                      class="w-4 h-4 mr-2" 
+                    <svg
+                      class="w-4 h-4 mr-2"
                       :class="milestone.achieved ? 'text-maghreb-green' : 'text-gray-400'"
-                      fill="currentColor" 
+                      fill="currentColor"
                       viewBox="0 0 20 20"
                     >
                       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
@@ -113,7 +113,7 @@
                     <span>{{ Math.min(100, Math.round((currentMembers / milestone.target) * 100)) }}%</span>
                   </div>
                   <div class="w-full bg-gray-200 rounded-full h-2">
-                    <div 
+                    <div
                       class="bg-gradient-to-r from-maghreb-yellow to-maghreb-orange h-2 rounded-full transition-all duration-1000"
                       :style="{ width: Math.min(100, (currentMembers / milestone.target) * 100) + '%' }"
                     ></div>
@@ -124,7 +124,7 @@
 
             <!-- Timeline Dot -->
             <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
-              <div 
+              <div
                 class="w-6 h-6 rounded-full border-4 transition-all duration-300"
                 :class="{
                   'bg-maghreb-green border-maghreb-green': milestone.achieved,
@@ -141,12 +141,12 @@
       </div>
 
       <!-- Milestone Detail Modal -->
-      <div 
-        v-if="selectedMilestone" 
+      <div
+        v-if="selectedMilestone"
         class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
         @click="selectedMilestone = null"
       >
-        <div 
+        <div
           class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto"
           @click.stop
         >
@@ -156,7 +156,7 @@
                 <h3 class="text-2xl font-bold text-maghreb-dark">{{ selectedMilestone.title }}</h3>
                 <p class="text-maghreb-green font-medium">{{ selectedMilestone.target }} Citizens Required</p>
               </div>
-              <button 
+              <button
                 @click="selectedMilestone = null"
                 class="text-gray-400 hover:text-gray-600 transition-colors"
               >
@@ -171,8 +171,8 @@
             <div class="mb-6">
               <h4 class="text-lg font-semibold text-maghreb-dark mb-3">Features & Benefits</h4>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div 
-                  v-for="feature in selectedMilestone.features" 
+                <div
+                  v-for="feature in selectedMilestone.features"
                   :key="feature"
                   class="flex items-center p-3 bg-gray-50 rounded-lg"
                 >
@@ -185,7 +185,7 @@
             </div>
 
             <div class="flex justify-center">
-              <button 
+              <button
                 @click="shareMilestone(selectedMilestone)"
                 class="bg-maghreb-green text-white px-6 py-3 rounded-lg font-medium hover:bg-maghreb-dark transition-colors"
               >
@@ -310,12 +310,12 @@ const selectMilestone = (milestone: Milestone) => {
 }
 
 const shareMilestone = (milestone: Milestone) => {
-  const text = `Help us reach ${milestone.target} citizens to unlock: ${milestone.title}! Join TheGreatMaghreb digital nation.`
-  const url = `https://www.reddit.com/r/TheGreatMaghreb/`
-  
+  const text = `Help us reach ${milestone.target} citizens to unlock: ${milestone.title}! Join e-Maghreb digital nation.`
+  const url = `https://www.reddit.com/r/e-Maghreb/`
+
   if (navigator.share) {
     navigator.share({
-      title: `TheGreatMaghreb Milestone: ${milestone.title}`,
+      title: `e-Maghreb Milestone: ${milestone.title}`,
       text: text,
       url: url
     })

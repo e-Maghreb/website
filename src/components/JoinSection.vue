@@ -6,14 +6,14 @@
           Become a Founding Citizen
         </h2>
         <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-          Join our digital nation and help shape the future of TheGreatMaghreb. Registration opens on January 1, 2026.
+          Join our digital nation and help shape the future of e-Maghreb. Registration opens on January 1, 2026.
         </p>
       </div>
 
       <!-- Steps -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        <div 
-          v-for="(step, index) in steps" 
+        <div
+          v-for="(step, index) in steps"
           :key="index"
           class="text-center group"
         >
@@ -23,16 +23,16 @@
               {{ step.number }}
             </div>
             <!-- Connector line (hidden on mobile and last item) -->
-            <div 
+            <div
               v-if="index < steps.length - 1"
               class="hidden md:block absolute top-8 left-full w-full h-1 bg-maghreb-green/30 -translate-x-1/2"
             ></div>
           </div>
-          
+
           <div class="bg-maghreb-light rounded-xl p-6 group-hover:bg-maghreb-green group-hover:text-white transition-all duration-300">
             <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white flex items-center justify-center group-hover:bg-maghreb-light transition-colors duration-300">
-              <component 
-                :is="step.icon" 
+              <component
+                :is="step.icon"
                 class="w-8 h-8 text-maghreb-green group-hover:text-maghreb-green transition-colors duration-300"
               />
             </div>
@@ -50,8 +50,8 @@
       <div class="bg-gradient-to-r from-maghreb-green to-maghreb-blue rounded-2xl p-8 text-white mb-12">
         <h3 class="text-2xl font-bold text-center mb-8">Founding Citizen Benefits</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div 
-            v-for="(benefit, index) in benefits" 
+          <div
+            v-for="(benefit, index) in benefits"
             :key="index"
             class="text-center"
           >
@@ -69,7 +69,7 @@
         <p class="text-lg text-gray-600 mb-6">
           Registration opens on <span class="font-bold text-maghreb-green">January 1, 2026</span>
         </p>
-        <button 
+        <button
           @click="handleCtaClick"
           class="bg-maghreb-green hover:bg-maghreb-green/90 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl disabled:bg-gray-400 disabled:cursor-not-allowed"
           :disabled="!isRegistrationOpen"

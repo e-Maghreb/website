@@ -17,8 +17,8 @@
         <div class="absolute left-8 top-0 bottom-0 w-1 bg-maghreb-green/30 lg:hidden"></div>
 
         <div class="space-y-12">
-          <div 
-            v-for="(phase, index) in phases" 
+          <div
+            v-for="(phase, index) in phases"
             :key="index"
             :class="[
               'relative flex items-center',
@@ -72,7 +72,7 @@
         <div class="bg-white rounded-2xl p-8 shadow-lg">
           <h3 class="text-2xl font-bold text-maghreb-dark mb-4">Overall Progress</h3>
           <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
-            <div 
+            <div
               class="bg-gradient-to-r from-maghreb-green to-maghreb-blue h-3 rounded-full transition-all duration-1000"
               :style="{ width: overallProgress + '%' }"
             ></div>
@@ -100,7 +100,7 @@ interface Phase {
 const phases: Phase[] = [
   {
     title: 'Founding Vision & Identity',
-    description: 'Established the core concept, mission, and visual identity of TheGreatMaghreb digital nation',
+    description: 'Established the core concept, mission, and visual identity of e-Maghreb digital nation',
     timeline: 'Completed',
     status: 'completed',
     icon: Target
@@ -128,7 +128,7 @@ const phases: Phase[] = [
   },
   {
     title: 'Official Launch & Scaling',
-    description: 'Official launch of TheGreatMaghreb digital nation with full platform features',
+    description: 'Official launch of e-Maghreb digital nation with full platform features',
     timeline: 'January 1, 2026',
     status: 'upcoming',
     icon: Rocket

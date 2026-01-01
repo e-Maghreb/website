@@ -275,7 +275,7 @@ const testimonials = ref<Testimonial[]>([
     name: 'Amina B.',
     title: 'Software Engineer',
     location: 'Casablanca, Morocco',
-    quote: 'TheGreatMaghreb has given me a sense of belonging to something bigger than myself. As a diaspora member, I finally feel connected to my roots while contributing to our digital future.',
+    quote: 'e-Maghreb has given me a sense of belonging to something bigger than myself. As a diaspora member, I finally feel connected to my roots while contributing to our digital future.',
     rating: 5
   },
   {
@@ -291,7 +291,7 @@ const testimonials = ref<Testimonial[]>([
     name: 'Sofia M.',
     title: 'Student',
     location: 'Algiers, Algeria',
-    quote: 'As a young Algerian, TheGreatMaghreb represents hope for unity and progress. The community support has been amazing for my personal and professional growth.',
+    quote: 'As a young Algerian, e-Maghreb represents hope for unity and progress. The community support has been amazing for my personal and professional growth.',
     rating: 5
   },
   {
@@ -299,7 +299,7 @@ const testimonials = ref<Testimonial[]>([
     name: 'Youssef L.',
     title: 'Digital Nomad',
     location: 'Barcelona, Spain',
-    quote: 'Living abroad, TheGreatMaghreb keeps me connected to my culture and heritage. It\'s more than a platform - it\'s a movement for Maghrebi empowerment.',
+    quote: 'Living abroad, e-Maghreb keeps me connected to my culture and heritage. It\'s more than a platform - it\'s a movement for Maghrebi empowerment.',
     rating: 5
   }
 ])
@@ -309,8 +309,8 @@ const userStories = ref<UserStory[]>([
     id: '1',
     name: 'Leila H.',
     category: 'Education & Career',
-    excerpt: 'Found my dream job through TheGreatMaghreb network connections...',
-    fullStory: 'After joining TheGreatMaghreb, I connected with professionals in my field who helped me navigate the job market. Through the community mentorship program, I landed a position at a tech company that values diversity and cultural understanding. The support I received was incredible.',
+    excerpt: 'Found my dream job through e-Maghreb network connections...',
+    fullStory: 'After joining e-Maghreb, I connected with professionals in my field who helped me navigate the job market. Through the community mentorship program, I landed a position at a tech company that values diversity and cultural understanding. The support I received was incredible.',
     impact: 'Successfully transitioned careers, increased salary by 40%, and now mentors other community members.',
     readTime: 3
   },
@@ -319,7 +319,7 @@ const userStories = ref<UserStory[]>([
     name: 'Ahmed R.',
     category: 'Business Development',
     excerpt: 'Launched a successful startup with co-founders met through the platform...',
-    fullStory: 'TheGreatMaghreb connected me with like-minded entrepreneurs from across the Maghreb region. We identified a common problem in cross-border trade and built a solution that now serves hundreds of businesses. The community provided both technical expertise and market insights.',
+    fullStory: 'e-Maghreb connected me with like-minded entrepreneurs from across the Maghreb region. We identified a common problem in cross-border trade and built a solution that now serves hundreds of businesses. The community provided both technical expertise and market insights.',
     impact: 'Generated $500K in revenue, created 15 jobs, and expanded to 3 countries.',
     readTime: 4
   },
@@ -328,7 +328,7 @@ const userStories = ref<UserStory[]>([
     name: 'Nadia K.',
     category: 'Cultural Preservation',
     excerpt: 'Organized the largest virtual Maghrebi cultural festival...',
-    fullStory: 'Using TheGreatMaghreb platform, I organized a week-long virtual cultural festival that brought together artists, musicians, and cultural experts from all five Maghreb countries. The event attracted over 10,000 participants and helped preserve traditional arts for future generations.',
+    fullStory: 'Using e-Maghreb platform, I organized a week-long virtual cultural festival that brought together artists, musicians, and cultural experts from all five Maghreb countries. The event attracted over 10,000 participants and helped preserve traditional arts for future generations.',
     impact: 'Connected 200+ artists, preserved 15 traditional art forms, and inspired cultural initiatives in 8 cities.',
     readTime: 5
   }
@@ -347,19 +347,19 @@ const openStory = (story: UserStory) => {
 }
 
 const joinCommunity = () => {
-  window.open('https://www.reddit.com/r/TheGreatMaghreb/', '_blank')
+  window.open('https://www.reddit.com/r/e-Maghreb/', '_blank')
 }
 
 const shareStory = (story?: UserStory) => {
   const text = story
-    ? `Check out ${story.name}'s inspiring story in TheGreatMaghreb community! ${story.excerpt}`
-    : 'Join TheGreatMaghreb and share your story with our growing digital nation!'
+    ? `Check out ${story.name}'s inspiring story in e-Maghreb community! ${story.excerpt}`
+    : 'Join e-Maghreb and share your story with our growing digital nation!'
 
-  const url = 'https://www.reddit.com/r/TheGreatMaghreb/'
+  const url = 'https://www.reddit.com/r/e-Maghreb/'
 
   if (navigator.share) {
     navigator.share({
-      title: 'TheGreatMaghreb Community Stories',
+      title: 'e-Maghreb Community Stories',
       text: text,
       url: url
     })

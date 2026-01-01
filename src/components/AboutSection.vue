@@ -3,23 +3,23 @@
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-maghreb-dark mb-6">
-          About TheGreatMaghreb
+          About e-Maghreb
         </h2>
         <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          TheGreatMaghreb is a digital nation designed to unite Maghrebi citizens globally, 
+          e-Maghreb is a digital nation designed to unite Maghrebi citizens globally,
           preserving our rich cultural heritage while embracing the future of digital identity and community.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div 
-          v-for="(value, index) in values" 
+        <div
+          v-for="(value, index) in values"
           :key="index"
           class="text-center p-6 rounded-lg bg-maghreb-light hover:bg-maghreb-green hover:text-white transition-all duration-300 transform hover:scale-105 group"
         >
           <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-maghreb-green group-hover:bg-white flex items-center justify-center transition-colors duration-300">
-            <component 
-              :is="value.icon" 
+            <component
+              :is="value.icon"
               class="w-8 h-8 text-white group-hover:text-maghreb-green transition-colors duration-300"
             />
           </div>
@@ -36,7 +36,7 @@
         <div class="bg-gradient-to-r from-maghreb-green to-maghreb-blue rounded-2xl p-8 text-white">
           <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
           <p class="text-lg opacity-90 max-w-2xl mx-auto">
-            To create a unified digital homeland that empowers Maghrebi citizens worldwide with digital identity, 
+            To create a unified digital homeland that empowers Maghrebi citizens worldwide with digital identity,
             cultural connection, and community governance, bridging geographical distances while celebrating our shared heritage.
           </p>
         </div>

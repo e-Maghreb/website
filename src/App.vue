@@ -5,7 +5,7 @@
       <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <div class="text-2xl font-bold text-maghreb-green">
-            TheGreatMaghreb
+            e-Maghreb
           </div>
           <div class="hidden md:flex space-x-8">
             <a

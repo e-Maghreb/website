@@ -4,7 +4,7 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <!-- Brand -->
         <div class="md:col-span-2">
-          <h3 class="text-2xl font-bold mb-4 text-maghreb-green">TheGreatMaghreb</h3>
+          <h3 class="text-2xl font-bold mb-4 text-maghreb-green">e-Maghreb</h3>
           <p class="text-gray-300 mb-6 max-w-md">
             A digital nation uniting Maghrebi citizens globally through technology, culture, and community.
           </p>
@@ -44,15 +44,15 @@
           <h4 class="text-lg font-semibold mb-4">Contact</h4>
           <div class="space-y-2">
             <a
-              href="mailto:hello@thegreatmaghreb.com"
+              href="mailto:hello@e-maghreb.org"
               class="flex items-center text-gray-300 hover:text-maghreb-green transition-colors duration-300"
             >
               <Mail class="w-4 h-4 mr-2" />
-              hello@thegreatmaghreb.com
+              hello@e-maghreb.org
             </a>
             <div class="flex items-center text-gray-300">
               <Globe class="w-4 h-4 mr-2" />
-              thegreatmaghreb.com
+              e-maghreb.org
             </div>
           </div>
         </div>
@@ -64,10 +64,10 @@
           <!-- Legal Notice -->
           <div class="text-sm text-gray-400 text-center md:text-left">
             <p class="mb-2">
-              <strong>Legal Notice:</strong> TheGreatMaghreb is a digital nation initiative and non-governmental entity.
+              <strong>Legal Notice:</strong> e-Maghreb is a digital nation initiative and non-governmental entity.
             </p>
             <p>
-              © 2025 TheGreatMaghreb. All rights reserved.
+              © 2025 e-Maghreb. All rights reserved.
             </p>
           </div>
 
@@ -109,22 +109,22 @@ interface QuickLink {
 const socialLinks: SocialLink[] = [
   {
     name: 'Facebook',
-    url: 'https://facebook.com/thegreatmaghreb',
+    url: 'https://facebook.com/e-maghreb',
     icon: Facebook
   },
   {
     name: 'Twitter',
-    url: 'https://twitter.com/thegreatmaghreb',
+    url: 'https://twitter.com/e-maghreb',
     icon: Twitter
   },
   {
     name: 'Instagram',
-    url: 'https://instagram.com/thegreatmaghreb',
+    url: 'https://instagram.com/e-maghreb',
     icon: Instagram
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/company/thegreatmaghreb',
+    url: 'https://linkedin.com/company/e-maghreb',
     icon: Linkedin
   }
 ]

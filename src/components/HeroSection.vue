@@ -8,7 +8,7 @@
     <!-- Content -->
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
       <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-        Welcome to TheGreatMaghreb
+        Welcome to e-Maghreb
       </h1>
       <p class="text-xl md:text-2xl lg:text-3xl mb-8 text-maghreb-light animate-slide-up">
         Your Digital Nation

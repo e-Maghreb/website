@@ -6,7 +6,7 @@
           Official Launch
         </h2>
         <p class="text-xl md:text-2xl mb-12 opacity-90">
-          TheGreatMaghreb Digital Nation
+          e-Maghreb Digital Nation
         </p>
 
         <!-- Launch Date -->
@@ -21,8 +21,8 @@
         <div v-if="!countdown.isExpired.value" class="mb-12">
           <h3 class="text-2xl font-bold mb-8">Countdown to Launch</h3>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            <div 
-              v-for="(unit, index) in timeUnits" 
+            <div
+              v-for="(unit, index) in timeUnits"
               :key="index"
               class="bg-white/10 rounded-xl p-6 backdrop-blur-sm animate-countdown-tick"
             >
@@ -40,7 +40,7 @@
         <div v-else class="mb-12">
           <div class="bg-maghreb-yellow text-maghreb-dark rounded-2xl p-8">
             <h3 class="text-3xl font-bold mb-4">🎉 We Are Live!</h3>
-            <p class="text-xl">TheGreatMaghreb Digital Nation has officially launched!</p>
+            <p class="text-xl">e-Maghreb Digital Nation has officially launched!</p>
           </div>
         </div>
 
@@ -50,7 +50,7 @@
           <p class="text-lg mb-6 opacity-90">
             Be the first to know when we launch and receive exclusive updates
           </p>
-          
+
           <form @submit.prevent="handleSignup" class="max-w-md mx-auto">
             <div class="flex flex-col sm:flex-row gap-4">
               <input
@@ -69,7 +69,7 @@
               </button>
             </div>
           </form>
-          
+
           <p v-if="submitMessage" :class="[
             'mt-4 text-sm',
             submitSuccess ? 'text-green-300' : 'text-red-300'
@@ -134,7 +134,7 @@ const handleSignup = async () => {
   try {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000))
-    
+
     emit('signup', email.value)
     submitMessage.value = 'Successfully signed up! You\'ll receive updates about our launch.'
     submitSuccess.value = true
