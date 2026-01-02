@@ -4,9 +4,9 @@
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
       <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
-          <div class="text-2xl font-bold">
+          <a href="/" class="text-2xl font-bold">
             <span class="text-maghreb-red">e-</span><span class="text-maghreb-green">Maghreb</span>
-          </div>
+          </a>
           <div class="hidden md:flex space-x-8">
             <a
               v-for="(item, index) in navItems"
@@ -122,7 +122,6 @@ const route = useRoute()
 
 // Navigation items
 const navItems = [
-  { text: 'Home', href: '#hero' },
   { text: 'About', href: '#about' },
   { text: 'Community', href: '#community' },
   { text: 'Roadmap', href: '#roadmap' },
