@@ -132,8 +132,7 @@ const socialLinks: SocialLink[] = [
 const quickLinks: QuickLink[] = [
   { text: 'About', href: '#about' },
   { text: 'Roadmap', href: '#roadmap' },
-  { text: 'Join', href: '#join' },
-  { text: 'Launch', href: '#launch' }
+  { text: 'Join', href: '#join' }
 ]
 
 const scrollToSection = (href: string) => {

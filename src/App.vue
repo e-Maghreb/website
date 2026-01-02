@@ -159,7 +159,6 @@ const navItems = [
   { text: 'Community', href: '#community' },
   { text: 'Roadmap', href: '#roadmap' },
   { text: 'Stories', href: '#social-proof' },
-  { text: 'Join', href: '#join' },
 ]
 
 // Mobile menu state
