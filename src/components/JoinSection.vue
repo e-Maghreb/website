@@ -71,7 +71,7 @@
         </p>
         <button
           @click="handleCtaClick"
-          class="bg-maghreb-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl disabled:bg-gray-400 disabled:cursor-not-allowed"
+          class="bg-maghreb-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
           :disabled="!isRegistrationOpen"
         >
           {{ isRegistrationOpen ? 'Register Now' : 'Join Waitlist' }}

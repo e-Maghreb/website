@@ -3,10 +3,10 @@
     <div class="container mx-auto px-4">
       <!-- Section Header -->
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-maghreb-dark mb-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-maghreb-dark mb-4">
           Our Journey Together
         </h2>
-        <p class="text-xl text-black max-w-3xl mx-auto">
+        <p class="text-lg md:text-xl text-black max-w-3xl mx-auto">
           Watch our digital nation grow and unlock new features as we reach community milestones
         </p>
 
@@ -24,7 +24,7 @@
           </div>
           <div class="flex justify-between text-sm text-black">
             <span>0</span>
-            <span class="font-medium">Next Milestone: {{ nextMilestone.target }} Citizens</span>
+            <span class="hidden sm:inline font-medium">Next Milestone: {{ nextMilestone.target }} Citizens</span>
             <span>{{ maxTarget }}</span>
           </div>
         </div>
@@ -33,19 +33,19 @@
       <!-- Interactive Timeline -->
       <div class="relative">
         <!-- Timeline Line -->
-        <div class="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gray-300"></div>
+        <div class="absolute left-8 md:left-1/2 transform -translate-x-px h-full w-0.5 bg-gray-300"></div>
 
         <!-- Milestone Cards -->
         <div class="space-y-12">
           <div
             v-for="(milestone, index) in milestones"
             :key="milestone.id"
-            class="relative flex items-center"
-            :class="{ 'flex-row-reverse': index % 2 === 1 }"
+            class="relative flex flex-col md:flex-row items-center"
+            :class="{ 'md:flex-row-reverse': index % 2 === 1 }"
           >
             <!-- Milestone Card -->
             <div
-              class="w-5/12 cursor-pointer transition-all duration-300 hover:scale-105"
+              class="w-full pl-20 md:pl-0 md:w-5/12 cursor-pointer transition-all duration-300 hover:scale-105"
               @click="selectMilestone(milestone)"
               @mouseenter="hoveredMilestone = milestone.id"
               @mouseleave="hoveredMilestone = null"
@@ -55,7 +55,7 @@
                 :class="{
                   'border-maghreb-green shadow-xl': milestone.achieved,
                   'border-gray-200': !milestone.achieved,
-                  'border-maghreb-gold shadow-lg': hoveredMilestone === milestone.id
+                  'border-maghreb-yellow shadow-lg': hoveredMilestone === milestone.id
                 }"
               >
                 <!-- Achievement Badge -->
@@ -68,7 +68,7 @@
                 </div>
 
                 <!-- Milestone Header -->
-                <div class="flex items-center justify-between mb-4">
+                <div class="flex flex-wrap items-center justify-between mb-4 gap-2">
                   <h3 class="text-xl font-bold text-maghreb-dark">{{ milestone.title }}</h3>
                   <span
                     class="px-3 py-1 rounded-full text-sm font-medium"
@@ -92,7 +92,7 @@
                     class="flex items-center text-sm"
                   >
                     <svg
-                      class="w-4 h-4 mr-2"
+                      class="w-4 h-4 mr-2 flex-shrink-0"
                       :class="milestone.achieved ? 'text-maghreb-green' : 'text-gray-400'"
                       fill="currentColor"
                       viewBox="0 0 20 20"
@@ -114,7 +114,7 @@
                   </div>
                   <div class="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      class="bg-gradient-to-r from-maghreb-yellow to-maghreb-orange h-2 rounded-full transition-all duration-1000"
+                      class="bg-gradient-to-r from-maghreb-yellow to-orange-500 h-2 rounded-full transition-all duration-1000"
                       :style="{ width: Math.min(100, (currentMembers / milestone.target) * 100) + '%' }"
                     ></div>
                   </div>
@@ -123,7 +123,7 @@
             </div>
 
             <!-- Timeline Dot -->
-            <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
+            <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 z-10 -ml-[0.5px] md:ml-0">
               <div
                 class="w-6 h-6 rounded-full border-4 transition-all duration-300"
                 :class="{
@@ -134,8 +134,8 @@
               ></div>
             </div>
 
-            <!-- Spacer -->
-            <div class="w-5/12"></div>
+            <!-- Spacer for Desktop -->
+            <div class="hidden md:block md:w-5/12"></div>
           </div>
         </div>
       </div>
@@ -143,11 +143,11 @@
       <!-- Milestone Detail Modal -->
       <div
         v-if="selectedMilestone"
-        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 overflow-y-auto"
         @click="selectedMilestone = null"
       >
         <div
-          class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+          class="bg-white rounded-lg shadow-xl max-w-2xl w-full my-8 relative"
           @click.stop
         >
           <div class="p-6">
@@ -158,7 +158,8 @@
               </div>
               <button
                 @click="selectedMilestone = null"
-                class="text-gray-400 hover:text-gray-600 transition-colors"
+                class="text-gray-400 hover:text-gray-600 transition-colors p-2"
+                aria-label="Close modal"
               >
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -176,7 +177,7 @@
                   :key="feature"
                   class="flex items-center p-3 bg-gray-50 rounded-lg"
                 >
-                  <svg class="w-5 h-5 text-maghreb-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <svg class="w-5 h-5 text-maghreb-green mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                   </svg>
                   <span class="text-black">{{ feature }}</span>
@@ -187,7 +188,7 @@
             <div class="flex justify-center">
               <button
                 @click="shareMilestone(selectedMilestone)"
-                class="bg-maghreb-green text-white px-6 py-3 rounded-lg font-medium hover:bg-maghreb-dark transition-colors"
+                class="bg-maghreb-green text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors"
               >
                 Share This Milestone
               </button>
@@ -297,8 +298,7 @@ const milestones = ref<Milestone[]>([
 const maxTarget = computed(() => Math.max(...milestones.value.map(m => m.target)))
 
 const progressPercentage = computed(() => {
-  const nextMilestone = milestones.value.find(m => !m.achieved) || milestones.value[milestones.value.length - 1]
-  return (currentMembers.value / maxTarget.value) * 100
+  return Math.min(100, (currentMembers.value / maxTarget.value) * 100)
 })
 
 const nextMilestone = computed(() => {
@@ -338,28 +338,5 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.maghreb-light {
-  background-color: #f0f9f4;
-}
-
-.maghreb-dark {
-  color: #1a472a;
-}
-
-.maghreb-green {
-  background-color: #22c55e;
-  color: white;
-}
-
-.maghreb-blue {
-  background-color: #C1272D;
-}
-
-.maghreb-yellow {
-  background-color: #eab308;
-}
-
-.maghreb-orange {
-  background-color: #f97316;
-}
+/* Scoped styles removed in favor of Tailwind config */
 </style>
