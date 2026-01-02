@@ -87,36 +87,7 @@
 
     <!-- Main Content -->
     <main>
-      <!-- Hero Section -->
-      <section id="hero">
-        <HeroSection @cta-click="scrollToSection('#join')" />
-      </section>
-
-      <!-- About Section -->
-      <section id="about">
-        <AboutSection />
-      </section>
-
-      <!-- Community Integration Section -->
-      <section id="community">
-        <CommunityIntegration />
-      </section>
-
-      <!-- Interactive Roadmap Section -->
-      <section id="roadmap">
-        <InteractiveRoadmap />
-      </section>
-
-      <!-- Social Proof Section -->
-      <section id="social-proof">
-        <SocialProof />
-      </section>
-
-      <!-- Join Section -->
-      <section id="join">
-        <JoinSection @cta-click="handleJoinClick" />
-      </section>
-
+      <router-view />
     </main>
 
     <!-- Footer -->
@@ -137,13 +108,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { Menu, X } from 'lucide-vue-next'
-import HeroSection from './components/HeroSection.vue'
-import AboutSection from './components/AboutSection.vue'
-import InteractiveRoadmap from './components/InteractiveRoadmap.vue'
-import CommunityIntegration from './components/CommunityIntegration.vue'
-import SocialProof from './components/SocialProof.vue'
-import JoinSection from './components/JoinSection.vue'
 import FooterSection from './components/FooterSection.vue'
 import { useCommunityMetrics } from './composables/useCommunityMetrics'
 import { useAccessibility } from './composables/useAccessibility'
@@ -151,6 +117,8 @@ import { useAccessibility } from './composables/useAccessibility'
 // Initialize community metrics and accessibility
 const { metrics, trackEvent } = useCommunityMetrics()
 const { accessibility, announceToScreenReader } = useAccessibility()
+const router = useRouter()
+const route = useRoute()
 
 // Navigation items
 const navItems = [
@@ -179,7 +147,7 @@ const toggleMobileMenu = () => {
 // Scroll to top functionality
 const showScrollTop = ref(false)
 
-const scrollToSection = (href: string) => {
+const scrollToSection = async (href: string) => {
   trackEvent('navigation', { target: href, source: 'nav_menu' })
 
   // Close mobile menu if open
@@ -188,9 +156,17 @@ const scrollToSection = (href: string) => {
     document.body.style.overflow = ''
   }
 
-  const element = document.querySelector(href)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
+  if (href.startsWith('#')) {
+    if (route.name !== 'home') {
+      await router.push({ name: 'home', hash: href })
+    } else {
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  } else {
+    router.push(href)
   }
 }
 
@@ -203,12 +179,7 @@ const handleScroll = () => {
   showScrollTop.value = window.scrollY > 300
 }
 
-// Event handlers
-const handleJoinClick = () => {
-  trackEvent('cta_click', { action: 'join_community', source: 'navigation' })
-  // In a real application, this would open a registration modal or redirect to a signup page
-  alert('Registration opens on February 17, 2026! Join our waitlist to be notified.')
-}
+
 
 
 // Lifecycle

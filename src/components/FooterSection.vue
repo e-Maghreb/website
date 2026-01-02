@@ -73,18 +73,18 @@
 
           <!-- Additional Links -->
           <div class="flex space-x-6 text-sm">
-            <a
-              href="#privacy"
+            <router-link
+              to="/privacy-policy"
               class="text-gray-400 hover:text-maghreb-green transition-colors duration-300"
             >
               Privacy Policy
-            </a>
-            <a
-              href="#terms"
+            </router-link>
+            <router-link
+              to="/terms-of-service"
               class="text-gray-400 hover:text-maghreb-green transition-colors duration-300"
             >
               Terms of Service
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
