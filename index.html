@@ -1,24 +1,58 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>e-Maghreb</title>
-    <script type="module">
-      if (import.meta.hot?.on) {
-        import.meta.hot.on('vite:error', (error) => {
-          if (error.err) {
-            console.error(
-              [error.err.message, error.err.frame].filter(Boolean).join('\n'),
-            )
-          }
-        })
-      }
-    </script>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>e-Maghreb | The Digital Nation for North African Citizens</title>
+  <meta name="title" content="e-Maghreb | The Digital Nation for North African Citizens" />
+  <meta name="description"
+    content="Join e-Maghreb, the digital nation uniting North African citizens worldwide. Connect, vote, and build our shared digital future with secure identity and community governance." />
+  <meta name="keywords"
+    content="Maghreb, North Africa, Digital Nation, Community, Morocco, Algeria, Tunisia, Libya, Mauritania, Diaspora" />
+  <meta name="author" content="e-Maghreb" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://e-maghreb.org/" />
+  <meta property="og:title" content="e-Maghreb | The Digital Nation" />
+  <meta property="og:description"
+    content="Join e-Maghreb, the digital nation uniting North African citizens worldwide. Connect, vote, and build our shared digital future." />
+  <meta property="og:image" content="https://e-maghreb.org/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://e-maghreb.org/" />
+  <meta property="twitter:title" content="e-Maghreb | The Digital Nation" />
+  <meta property="twitter:description"
+    content="Join e-Maghreb, the digital nation uniting North African citizens worldwide. Connect, vote, and build our shared digital future." />
+  <meta property="twitter:image" content="https://e-maghreb.org/og-image.png" />
+  <meta name="twitter:site" content="@e_maghreb" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="module">
+    if (import.meta.hot?.on) {
+      import.meta.hot.on('vite:error', (error) => {
+        if (error.err) {
+          console.error(
+            [error.err.message, error.err.frame].filter(Boolean).join('\n'),
+          )
+        }
+      })
+    }
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
