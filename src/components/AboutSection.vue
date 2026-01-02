@@ -5,7 +5,7 @@
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-maghreb-dark mb-6">
           About e-Maghreb
         </h2>
-        <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p class="text-lg md:text-xl text-black max-w-3xl mx-auto leading-relaxed">
           e-Maghreb is a digital nation designed to unite Maghrebi citizens globally,
           preserving our rich cultural heritage while embracing the future of digital identity and community.
         </p>
@@ -26,14 +26,14 @@
           <h3 class="text-xl font-semibold mb-3 group-hover:text-white transition-colors duration-300">
             {{ value.title }}
           </h3>
-          <p class="text-gray-600 group-hover:text-white/90 transition-colors duration-300">
+          <p class="text-black group-hover:text-white/90 transition-colors duration-300">
             {{ value.description }}
           </p>
         </div>
       </div>
 
       <div class="mt-16 text-center">
-        <div class="bg-gradient-to-r from-maghreb-green to-maghreb-blue rounded-2xl p-8 text-white">
+        <div class="bg-gradient-to-r from-maghreb-green to-maghreb-red rounded-2xl p-8 text-white">
           <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
           <p class="text-lg opacity-90 max-w-2xl mx-auto">
             To create a unified digital homeland that empowers Maghrebi citizens worldwide with digital identity,

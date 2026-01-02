@@ -4,15 +4,15 @@
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
       <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
-          <div class="text-2xl font-bold text-maghreb-green">
-            e-Maghreb
+          <div class="text-2xl font-bold">
+            <span class="text-maghreb-red">e-</span><span class="text-maghreb-green">Maghreb</span>
           </div>
           <div class="hidden md:flex space-x-8">
             <a
               v-for="(item, index) in navItems"
               :key="index"
               :href="item.href"
-              class="text-gray-700 hover:text-maghreb-green transition-colors duration-300 font-medium"
+              class="text-black hover:text-maghreb-green transition-colors duration-300 font-medium"
               @click.prevent="scrollToSection(item.href)"
             >
               {{ item.text }}
@@ -20,7 +20,7 @@
           </div>
           <button
             @click="scrollToSection('#join')"
-            class="bg-maghreb-green hover:bg-maghreb-green/90 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
+            class="bg-maghreb-red hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
           >
             Join Now
           </button>

@@ -5,7 +5,7 @@
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-maghreb-dark mb-6">
           Become a Founding Citizen
         </h2>
-        <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-lg md:text-xl text-black max-w-3xl mx-auto">
           Join our digital nation and help shape the future of e-Maghreb. Registration opens on February 17, 2026.
         </p>
       </div>
@@ -39,7 +39,7 @@
             <h3 class="text-xl font-semibold mb-3 group-hover:text-white transition-colors duration-300">
               {{ step.title }}
             </h3>
-            <p class="text-gray-600 group-hover:text-white/90 transition-colors duration-300">
+            <p class="text-black group-hover:text-white/90 transition-colors duration-300">
               {{ step.description }}
             </p>
           </div>
@@ -47,7 +47,7 @@
       </div>
 
       <!-- Benefits -->
-      <div class="bg-gradient-to-r from-maghreb-green to-maghreb-blue rounded-2xl p-8 text-white mb-12">
+      <div class="bg-gradient-to-r from-maghreb-green to-maghreb-red rounded-2xl p-8 text-white mb-12">
         <h3 class="text-2xl font-bold text-center mb-8">Founding Citizen Benefits</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
@@ -66,12 +66,12 @@
 
       <!-- CTA -->
       <div class="text-center">
-        <p class="text-lg text-gray-600 mb-6">
+        <p class="text-lg text-black mb-6">
           Registration opens on <span class="font-bold text-maghreb-green">February 17, 2026</span>
         </p>
         <button
           @click="handleCtaClick"
-          class="bg-maghreb-green hover:bg-maghreb-green/90 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl disabled:bg-gray-400 disabled:cursor-not-allowed"
+          class="bg-maghreb-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl disabled:bg-gray-400 disabled:cursor-not-allowed"
           :disabled="!isRegistrationOpen"
         >
           {{ isRegistrationOpen ? 'Register Now' : 'Join Waitlist' }}

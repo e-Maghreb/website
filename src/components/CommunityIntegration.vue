@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 md:py-32 bg-gradient-to-br from-maghreb-red via-maghreb-yellow to-maghreb-green">
+  <section class="py-20 md:py-32 bg-gradient-to-br from-maghreb-red via-black to-maghreb-green">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -17,7 +17,7 @@
           :key="index"
           class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center text-white hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
         >
-          <div class="text-4xl md:text-5xl font-bold mb-2 text-maghreb-yellow">
+          <div class="text-4xl md:text-5xl font-bold mb-2 text-white">
             {{ stat.count }}
           </div>
           <div class="text-lg opacity-90">{{ stat.label }}</div>
@@ -34,8 +34,8 @@
             :key="index"
             class="text-center text-white"
           >
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-maghreb-yellow/20 flex items-center justify-center">
-              <component :is="feature.icon" class="w-8 h-8 text-maghreb-yellow" />
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center">
+              <component :is="feature.icon" class="w-8 h-8 text-white" />
             </div>
             <h4 class="font-semibold mb-2">{{ feature.title }}</h4>
             <p class="text-sm opacity-80">{{ feature.description }}</p>
@@ -47,7 +47,7 @@
       <div class="text-center">
         <div class="bg-white rounded-2xl p-8 max-w-2xl mx-auto">
           <h3 class="text-2xl font-bold text-maghreb-dark mb-4">Ready to Join?</h3>
-          <p class="text-gray-600 mb-6">
+          <p class="text-black mb-6">
             Be part of the conversation and help shape the future of our digital nation
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">

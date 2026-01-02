@@ -5,7 +5,7 @@
         <!-- Brand -->
         <div class="md:col-span-2">
           <h3 class="text-2xl font-bold mb-4 text-maghreb-green">e-Maghreb</h3>
-          <p class="text-gray-300 mb-6 max-w-md">
+          <p class="text-white mb-6 max-w-md">
             A digital nation uniting Maghrebi citizens globally through technology, culture, and community.
           </p>
           <div class="flex space-x-4">
@@ -30,7 +30,7 @@
             <li v-for="(link, index) in quickLinks" :key="index">
               <a
                 :href="link.href"
-                class="text-gray-300 hover:text-maghreb-green transition-colors duration-300"
+                class="text-white hover:text-maghreb-green transition-colors duration-300"
                 @click.prevent="scrollToSection(link.href)"
               >
                 {{ link.text }}
@@ -45,12 +45,12 @@
           <div class="space-y-2">
             <a
               href="mailto:hello@e-maghreb.org"
-              class="flex items-center text-gray-300 hover:text-maghreb-green transition-colors duration-300"
+              class="flex items-center text-white hover:text-maghreb-green transition-colors duration-300"
             >
               <Mail class="w-4 h-4 mr-2" />
               hello@e-maghreb.org
             </a>
-            <div class="flex items-center text-gray-300">
+            <div class="flex items-center text-white">
               <Globe class="w-4 h-4 mr-2" />
               e-maghreb.org
             </div>
@@ -146,6 +146,6 @@ const scrollToSection = (href: string) => {
 
 <style scoped>
 footer {
-  background: linear-gradient(135deg, #1a1a1a 0%, #003153 100%);
+  background: linear-gradient(135deg, #000000 0%, #006233 100%);
 }
 </style>

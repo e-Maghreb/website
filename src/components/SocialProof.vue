@@ -6,7 +6,7 @@
         <h2 class="text-4xl font-bold text-maghreb-dark mb-4">
           Join Our Growing Community
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-xl text-black max-w-3xl mx-auto">
           See what our citizens are saying about building the future of the Maghreb digital nation
         </p>
       </div>
@@ -15,25 +15,25 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
         <div class="bg-white rounded-lg shadow-lg p-6 text-center">
           <div class="text-3xl font-bold text-maghreb-green mb-2">{{ communityStats.totalCitizens }}</div>
-          <div class="text-gray-600">Total Citizens</div>
+          <div class="text-black">Total Citizens</div>
           <div class="text-sm text-maghreb-green mt-1">+{{ communityStats.newThisWeek }} this week</div>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-          <div class="text-3xl font-bold text-maghreb-blue mb-2">{{ communityStats.countries }}</div>
-          <div class="text-gray-600">Countries Represented</div>
-          <div class="text-sm text-maghreb-blue mt-1">{{ communityStats.regions }} regions</div>
+          <div class="text-3xl font-bold text-maghreb-red mb-2">{{ communityStats.countries }}</div>
+          <div class="text-black">Countries Represented</div>
+          <div class="text-sm text-maghreb-red mt-1">{{ communityStats.regions }} regions</div>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6 text-center">
           <div class="text-3xl font-bold text-maghreb-orange mb-2">{{ communityStats.activeDiscussions }}</div>
-          <div class="text-gray-600">Active Discussions</div>
+          <div class="text-black">Active Discussions</div>
           <div class="text-sm text-maghreb-orange mt-1">{{ communityStats.topics }} topics</div>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6 text-center">
           <div class="text-3xl font-bold text-maghreb-yellow mb-2">{{ communityStats.satisfaction }}%</div>
-          <div class="text-gray-600">Satisfaction Rate</div>
+          <div class="text-black">Satisfaction Rate</div>
           <div class="text-sm text-maghreb-yellow mt-1">Based on surveys</div>
         </div>
       </div>
@@ -54,14 +54,14 @@
                 <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
                   <!-- Avatar -->
                   <div class="flex-shrink-0">
-                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-maghreb-green to-maghreb-blue flex items-center justify-center text-white text-2xl font-bold">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-maghreb-green to-maghreb-red flex items-center justify-center text-white text-2xl font-bold">
                       {{ testimonial.name.charAt(0) }}
                     </div>
                   </div>
 
                   <!-- Content -->
                   <div class="flex-1 text-center md:text-left">
-                    <blockquote class="text-lg text-gray-700 mb-4 italic">
+                    <blockquote class="text-lg text-black mb-4 italic">
                       "{{ testimonial.quote }}"
                     </blockquote>
                     <div class="mb-2">
@@ -78,7 +78,7 @@
                         </div>
                       </div>
                       <div class="font-semibold text-maghreb-dark">{{ testimonial.name }}</div>
-                      <div class="text-gray-600 text-sm">{{ testimonial.title }} • {{ testimonial.location }}</div>
+                      <div class="text-black text-sm">{{ testimonial.title }} • {{ testimonial.location }}</div>
                     </div>
                   </div>
                 </div>
@@ -136,19 +136,19 @@
             </div>
             <div>
               <div class="font-semibold text-maghreb-dark">{{ story.name }}</div>
-              <div class="text-sm text-gray-600">{{ story.category }}</div>
+              <div class="text-sm text-black">{{ story.category }}</div>
             </div>
           </div>
-          <p class="text-gray-700 mb-4">{{ story.excerpt }}</p>
+          <p class="text-black mb-4">{{ story.excerpt }}</p>
           <div class="flex items-center justify-between">
             <span class="text-sm text-maghreb-green font-medium">Read more →</span>
-            <span class="text-xs text-gray-500">{{ story.readTime }} min read</span>
+            <span class="text-xs text-black">{{ story.readTime }} min read</span>
           </div>
         </div>
       </div>
 
       <!-- CTA Section -->
-      <div class="text-center bg-gradient-to-r from-maghreb-green to-maghreb-blue rounded-lg p-8 text-white">
+      <div class="text-center bg-gradient-to-r from-maghreb-green to-maghreb-red rounded-lg p-8 text-white">
         <h3 class="text-2xl font-bold mb-4">Ready to Share Your Story?</h3>
         <p class="text-lg mb-6 opacity-90">
           Join thousands of Maghrebi citizens building the future together
@@ -187,7 +187,7 @@
                 </div>
                 <div>
                   <h3 class="text-xl font-bold text-maghreb-dark">{{ selectedStory.name }}</h3>
-                  <p class="text-gray-600">{{ selectedStory.category }}</p>
+                  <p class="text-black">{{ selectedStory.category }}</p>
                 </div>
               </div>
               <button
@@ -201,10 +201,10 @@
             </div>
 
             <div class="prose max-w-none">
-              <p class="text-gray-700 mb-4">{{ selectedStory.fullStory }}</p>
+              <p class="text-black mb-4">{{ selectedStory.fullStory }}</p>
               <div class="bg-gray-50 rounded-lg p-4 mt-4">
                 <h4 class="font-semibold text-maghreb-dark mb-2">Impact & Results</h4>
-                <p class="text-gray-700">{{ selectedStory.impact }}</p>
+                <p class="text-black">{{ selectedStory.impact }}</p>
               </div>
             </div>
 
@@ -407,7 +407,7 @@ onUnmounted(() => {
 }
 
 .maghreb-blue {
-  background-color: #3b82f6;
+  background-color: #C1272D;
 }
 
 .maghreb-yellow {

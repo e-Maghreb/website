@@ -1,5 +1,5 @@
 <template>
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-maghreb-green via-maghreb-blue to-maghreb-dark">
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-maghreb-red via-black to-maghreb-green">
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-10">
       <div class="absolute inset-0 bg-gradient-to-br from-transparent via-white/10 to-transparent"></div>
@@ -19,7 +19,7 @@
 
       <button
         @click="handleCtaClick"
-        class="bg-maghreb-green hover:bg-maghreb-green/90 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-slide-up"
+        class="bg-maghreb-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-slide-up"
       >
         Become a Founding Citizen
       </button>
