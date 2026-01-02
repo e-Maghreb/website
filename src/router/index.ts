@@ -10,13 +10,13 @@ const routes = [
     component: HomePage,
   },
   {
-    path: '/privacy-policy',
-    name: 'privacy-policy',
+    path: '/privacy',
+    name: 'privacy',
     component: PrivacyPolicy,
   },
   {
-    path: '/terms-of-service',
-    name: 'terms-of-service',
+    path: '/terms',
+    name: 'terms',
     component: TermsOfService,
   },
 ]
