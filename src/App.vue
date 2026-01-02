@@ -187,17 +187,21 @@ body {
 
 /* Focus indicators */
 *:focus {
-  outline: 2px solid #22c55e;
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #C1272D; /* Maghreb Red */
   outline-offset: 2px;
 }
 
-button:focus,
-a:focus,
+/* Enhanced focus for form elements */
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid #22c55e;
-  outline-offset: 2px;
+  outline: none;
+  border-color: #006233; /* Maghreb Green */
+  box-shadow: 0 0 0 3px rgba(0, 98, 51, 0.2);
 }
 
 /* High contrast mode support */
