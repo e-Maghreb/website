@@ -18,14 +18,71 @@
               {{ item.text }}
             </a>
           </div>
-          <button
-            @click="scrollToSection('#join')"
-            class="bg-maghreb-red hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
-          >
-            Join Now
-          </button>
+          <div class="flex items-center space-x-4">
+            <!-- Join Button -->
+            <button
+              @click="scrollToSection('#join')"
+              class="hidden sm:block bg-maghreb-red hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
+            >
+              Join Now
+            </button>
+
+            <!-- Mobile Menu Button -->
+            <button
+              @click="toggleMobileMenu"
+              class="md:hidden p-2 text-black hover:text-maghreb-green transition-colors relative z-50"
+              aria-label="Toggle mobile menu"
+            >
+              <component :is="isMobileMenuOpen ? X : Menu" class="w-8 h-8" />
+            </button>
+          </div>
         </div>
       </div>
+
+      <!-- Mobile Menu Overlay -->
+      <transition
+        enter-active-class="transition duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] origin-top"
+        enter-from-class="transform scale-y-0 opacity-0"
+        enter-to-class="transform scale-y-100 opacity-100"
+        leave-active-class="transition duration-300 ease-in origin-top"
+        leave-from-class="transform scale-y-100 opacity-100"
+        leave-to-class="transform scale-y-0 opacity-0"
+      >
+        <div
+          v-if="isMobileMenuOpen"
+          class="absolute top-full left-0 w-full h-screen bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-xl overflow-y-auto pb-32"
+        >
+          <!-- Decorative Background -->
+          <div class="absolute top-0 right-0 w-64 h-64 bg-maghreb-green/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+          <div class="absolute bottom-0 left-0 w-80 h-80 bg-maghreb-red/5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
+
+          <div class="flex flex-col items-center justify-center pt-12 space-y-8 relative z-10">
+            <a
+              v-for="(item, index) in navItems"
+              :key="index"
+              :href="item.href"
+              class="group flex items-center space-x-3 text-3xl md:text-4xl font-bold text-gray-900 hover:text-maghreb-green transition-all duration-300 py-2"
+              @click.prevent="scrollToSection(item.href)"
+            >
+              <span class="w-2 h-2 rounded-full bg-maghreb-red opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100"></span>
+              <span>{{ item.text }}</span>
+            </a>
+
+            <div class="w-12 h-1 bg-gray-100 rounded-full my-4"></div>
+
+            <button
+              @click="scrollToSection('#join')"
+              class="bg-gradient-to-r from-maghreb-red to-red-600 text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg shadow-red-500/30 transition-all duration-300 transform hover:scale-105 hover:shadow-xl sm:hidden w-full max-w-xs"
+            >
+              Join Now
+            </button>
+          </div>
+
+          <div class="text-center text-gray-400 text-sm mt-12 relative z-10 pb-8">
+            <p>&copy; 2026 e-Maghreb. All rights reserved.</p>
+          </div>
+        </div>
+      </transition>
     </nav>
 
     <!-- Main Content -->
@@ -80,6 +137,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { Menu, X } from 'lucide-vue-next'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import InteractiveRoadmap from './components/InteractiveRoadmap.vue'
@@ -89,7 +147,6 @@ import JoinSection from './components/JoinSection.vue'
 import FooterSection from './components/FooterSection.vue'
 import { useCommunityMetrics } from './composables/useCommunityMetrics'
 import { useAccessibility } from './composables/useAccessibility'
-// Import lucide icons - will use SVG directly since lucide-react is React-specific
 
 // Initialize community metrics and accessibility
 const { metrics, trackEvent } = useCommunityMetrics()
@@ -105,11 +162,33 @@ const navItems = [
   { text: 'Join', href: '#join' },
 ]
 
+// Mobile menu state
+const isMobileMenuOpen = ref(false)
+
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value
+  trackEvent('interaction', { action: 'toggle_mobile_menu', state: isMobileMenuOpen.value ? 'open' : 'closed' })
+
+  if (isMobileMenuOpen.value) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = ''
+  }
+}
+
+
 // Scroll to top functionality
 const showScrollTop = ref(false)
 
 const scrollToSection = (href: string) => {
   trackEvent('navigation', { target: href, source: 'nav_menu' })
+
+  // Close mobile menu if open
+  if (isMobileMenuOpen.value) {
+    isMobileMenuOpen.value = false
+    document.body.style.overflow = ''
+  }
+
   const element = document.querySelector(href)
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' })
