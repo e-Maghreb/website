@@ -4,9 +4,11 @@
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
       <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
-          <a href="/" class="text-2xl font-bold">
-            <span class="text-maghreb-red">e-</span><span class="text-maghreb-green">Maghreb</span>
-          </a>
+          <div class="text-2xl font-bold">
+            <router-link to="/">
+              <span class="text-maghreb-red">e-</span><span class="text-maghreb-green">Maghreb</span>
+            </router-link>
+          </div>
           <div class="hidden md:flex space-x-8">
             <a
               v-for="(item, index) in navItems"
