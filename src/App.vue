@@ -50,7 +50,7 @@
       >
         <div
           v-if="isMobileMenuOpen"
-          class="absolute top-full left-0 w-full h-screen bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-xl overflow-y-auto pb-32"
+          class="absolute top-full left-0 w-full h-screen bg-white backdrop-blur-xl border-t border-gray-100 shadow-xl overflow-y-auto pb-32"
         >
           <!-- Decorative Background -->
           <div class="absolute top-0 right-0 w-64 h-64 bg-maghreb-green/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
