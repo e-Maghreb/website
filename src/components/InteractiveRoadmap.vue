@@ -222,7 +222,7 @@ const milestones = ref<Milestone[]>([
     id: '1',
     title: 'Foundation Phase',
     description: 'Building the core community and establishing our digital presence',
-    target: 10,
+    target: 100,
     achieved: false,
     features: [
       'Basic community forum access',
@@ -237,7 +237,7 @@ const milestones = ref<Milestone[]>([
     id: '2',
     title: 'Growth & Governance',
     description: 'Implementing democratic governance and expanding community features',
-    target: 50,
+    target: 500,
     achieved: false,
     features: [
       'Democratic voting system',
@@ -252,7 +252,7 @@ const milestones = ref<Milestone[]>([
     id: '3',
     title: 'Digital Services',
     description: 'Launching essential digital services for all citizens',
-    target: 100,
+    target: 1000,
     achieved: false,
     features: [
       'Digital ID verification system',
@@ -267,7 +267,7 @@ const milestones = ref<Milestone[]>([
     id: '4',
     title: 'Economic Integration',
     description: 'Creating economic opportunities and partnerships',
-    target: 500,
+    target: 5000,
     achieved: false,
     features: [
       'Digital currency integration',
@@ -282,7 +282,7 @@ const milestones = ref<Milestone[]>([
     id: '5',
     title: 'Full Nation Status',
     description: 'Achieving full digital nation capabilities and recognition',
-    target: 1000,
+    target: 10000,
     achieved: false,
     features: [
       'Full diplomatic recognition',

@@ -40,7 +40,7 @@ src/
 ├── components/
 │   ├── HeroSection.vue
 │   ├── AboutSection.vue
-│   ├── RoadmapSection.vue
+│   ├── InteractiveRoadmap.vue
 │   ├── JoinSection.vue
 │   ├── LaunchSection.vue
 │   └── FooterSection.vue
