@@ -5,11 +5,11 @@
       <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <div class="text-2xl font-bold">
-            <router-link to="/">
+            <router-link :to="homePath" @click="scrollToTop">
               <span class="text-maghreb-red">e-</span><span class="text-maghreb-green">Maghreb</span>
             </router-link>
           </div>
-          <div class="hidden md:flex space-x-8">
+          <div class="hidden md:flex gap-8">
             <a
               v-for="(item, index) in navItems"
               :key="index"
@@ -20,13 +20,37 @@
               {{ item.text }}
             </a>
           </div>
-          <div class="flex items-center space-x-4">
+          <div class="flex items-center gap-4">
+            <!-- Language Switcher (Desktop) -->
+            <div class="hidden md:block relative group z-50">
+              <button class="flex items-center gap-1 text-black hover:text-maghreb-green transition-colors font-medium py-2">
+                <span>{{ availableLanguages.find(l => l.code === currentLang)?.label }}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <!-- Dropdown with invisible bridge (pt-2) -->
+              <div class="absolute right-0 top-full pt-2 w-32 hidden group-hover:block">
+                <div class="bg-white rounded-xl shadow-xl py-2 border border-gray-100 animate-fade-in">
+                  <button
+                    v-for="lang in availableLanguages"
+                    :key="lang.code"
+                    @click="setLanguage(lang.code)"
+                    class="block px-4 py-2 text-sm hover:bg-gray-50 w-full text-left transition-colors"
+                    :class="currentLang === lang.code ? 'text-maghreb-green font-bold' : 'text-gray-700'"
+                  >
+                    {{ lang.label }}
+                  </button>
+                </div>
+              </div>
+            </div>
+
             <!-- Join Button -->
             <button
               @click="scrollToSection('#join')"
               class="hidden sm:block bg-maghreb-red hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
             >
-              Join Now
+              {{ t('nav.join') }}
             </button>
 
             <!-- Mobile Menu Button -->
@@ -59,11 +83,23 @@
           <div class="absolute bottom-0 left-0 w-80 h-80 bg-maghreb-red/5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
 
           <div class="flex flex-col items-center justify-center pt-12 space-y-8 relative z-10">
+            <!-- Language Switcher (Mobile) -->
+            <div class="flex gap-4 mb-4">
+              <button
+                v-for="lang in availableLanguages"
+                :key="lang.code"
+                @click="setLanguage(lang.code)"
+                class="px-4 py-2 rounded-full border transition-all duration-300"
+                :class="currentLang === lang.code ? 'bg-maghreb-green text-white border-maghreb-green' : 'border-gray-200 text-gray-600'"
+              >
+                {{ lang.label }}
+              </button>
+            </div>
             <a
               v-for="(item, index) in navItems"
               :key="index"
               :href="item.href"
-              class="group flex items-center space-x-3 text-3xl md:text-4xl font-bold text-gray-900 hover:text-maghreb-green transition-all duration-300 py-2"
+              class="group flex items-center gap-3 text-3xl md:text-4xl font-bold text-gray-900 hover:text-maghreb-green transition-all duration-300 py-2"
               @click.prevent="scrollToSection(item.href)"
             >
               <span class="w-2 h-2 rounded-full bg-maghreb-red opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100"></span>
@@ -76,12 +112,12 @@
               @click="scrollToSection('#join')"
               class="bg-gradient-to-r from-maghreb-red to-red-600 text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg shadow-red-500/30 transition-all duration-300 transform hover:scale-105 hover:shadow-xl sm:hidden w-full max-w-xs"
             >
-              Join Now
+              {{ t('nav.join') }}
             </button>
           </div>
 
           <div class="text-center text-gray-400 text-sm mt-12 relative z-10 pb-8">
-            <p>&copy; 2026 e-Maghreb. All rights reserved.</p>
+            <p>&copy; 2026 e-Maghreb. {{ t('footer.rights') }}</p>
           </div>
         </div>
       </transition>
@@ -109,12 +145,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { Menu, X } from 'lucide-vue-next'
 import FooterSection from './components/FooterSection.vue'
 import { useCommunityMetrics } from './composables/useCommunityMetrics'
 import { useAccessibility } from './composables/useAccessibility'
+import { useLanguage } from './composables/useLanguage'
 
 // Initialize community metrics and accessibility
 const { metrics, trackEvent } = useCommunityMetrics()
@@ -123,12 +160,20 @@ const router = useRouter()
 const route = useRoute()
 
 // Navigation items
-const navItems = [
-  { text: 'About', href: '#about' },
-  { text: 'Community', href: '#community' },
-  { text: 'Roadmap', href: '#roadmap' },
-  { text: 'Stories', href: '#social-proof' },
-]
+const { t, currentLang, setLanguage, availableLanguages } = useLanguage()
+
+const homePath = computed(() => {
+  return currentLang.value === 'en' ? '/' : `/${currentLang.value}`
+})
+
+
+// Navigation items
+const navItems = computed(() => [
+  { text: t('nav.about'), href: '#about' },
+  { text: t('nav.community'), href: '#community' },
+  { text: t('nav.roadmap'), href: '#roadmap' },
+  { text: t('nav.stories'), href: '#social-proof' },
+])
 
 // Mobile menu state
 const isMobileMenuOpen = ref(false)

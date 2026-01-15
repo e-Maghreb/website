@@ -3,10 +3,10 @@
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-maghreb-dark mb-6">
-          Become a Founding Citizen
+          {{ t('join.title') }}
         </h2>
         <p class="text-lg md:text-xl text-black max-w-3xl mx-auto">
-          Join our digital nation and help shape the future of e-Maghreb. Registration opens on February 17, 2026.
+          {{ t('join.subtitle') }}
         </p>
       </div>
 
@@ -48,7 +48,7 @@
 
       <!-- Benefits -->
       <div class="bg-gradient-to-r from-maghreb-green to-maghreb-red rounded-2xl p-8 text-white mb-12">
-        <h3 class="text-2xl font-bold text-center mb-8">Founding Citizen Benefits</h3>
+        <h3 class="text-2xl font-bold text-center mb-8">{{ t('join.benefits.title') }}</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
             v-for="(benefit, index) in benefits"
@@ -67,17 +67,17 @@
       <!-- CTA -->
       <div class="text-center">
         <p class="text-lg text-black mb-6">
-          Registration opens on <span class="font-bold text-maghreb-green">February 17, 2026</span>
+          {{ t('join.cta.opens_on') }} <span class="font-bold text-maghreb-green">February 17, 2026</span>
         </p>
         <button
           @click="handleCtaClick"
           class="bg-maghreb-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
           :disabled="!isRegistrationOpen"
         >
-          {{ isRegistrationOpen ? 'Register Now' : 'Join Waitlist' }}
+          {{ isRegistrationOpen ? t('join.cta.register_now') : t('join.cta.join_waitlist') }}
         </button>
         <p v-if="!isRegistrationOpen" class="text-sm text-gray-500 mt-4">
-          Be among the first to know when registration opens
+          {{ t('join.cta.notify') }}
         </p>
       </div>
     </div>
@@ -85,8 +85,11 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits, computed } from 'vue'
+import { computed } from 'vue'
 import { Mail, IdCard, MessageCircle, Vote, Star, Users } from 'lucide-vue-next'
+import { useLanguage } from '../composables/useLanguage'
+
+const { t } = useLanguage()
 
 const emit = defineEmits<{
   ctaClick: []
@@ -109,44 +112,44 @@ interface Benefit {
   icon: any
 }
 
-const steps: Step[] = [
+const steps = computed<Step[]>(() => [
   {
     number: 1,
-    title: 'Sign Up with Email',
-    description: 'Register your interest with a valid email address to join our founding citizen community',
+    title: t('join.steps.1.title'),
+    description: t('join.steps.1.description'),
     icon: Mail
   },
   {
     number: 2,
-    title: 'Receive Digital ID',
-    description: 'Get your unique digital citizenship ID and access credentials via secure email delivery',
+    title: t('join.steps.2.title'),
+    description: t('join.steps.2.description'),
     icon: IdCard
   },
   {
     number: 3,
-    title: 'Join Community',
-    description: 'Access exclusive Discord/forum channels and connect with fellow founding citizens',
+    title: t('join.steps.3.title'),
+    description: t('join.steps.3.description'),
     icon: MessageCircle
   }
-]
+])
 
-const benefits: Benefit[] = [
+const benefits = computed<Benefit[]>(() => [
   {
-    title: 'Voting Rights',
-    description: 'Participate in digital nation governance and decision-making processes',
+    title: t('join.benefits.1.title'),
+    description: t('join.benefits.1.description'),
     icon: Vote
   },
   {
-    title: 'Early Access',
-    description: 'Get priority access to new features and platform updates before public release',
+    title: t('join.benefits.2.title'),
+    description: t('join.benefits.2.description'),
     icon: Star
   },
   {
-    title: 'Exclusive Network',
-    description: 'Connect with Maghrebi professionals, entrepreneurs, and community leaders worldwide',
+    title: t('join.benefits.3.title'),
+    description: t('join.benefits.3.description'),
     icon: Users
   }
-]
+])
 
 const handleCtaClick = () => {
   emit('ctaClick')

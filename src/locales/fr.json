@@ -1,0 +1,271 @@
+{
+    "nav": {
+        "about": "À propos",
+        "community": "Communauté",
+        "roadmap": "Feuille de route",
+        "stories": "Histoires",
+        "join": "Rejoindre"
+    },
+    "hero": {
+        "welcome": "Bienvenue sur e-Maghreb",
+        "subtitle": "Votre Nation Numérique",
+        "description": "Connecter les citoyens maghrébins à travers le monde",
+        "cta": "Devenir Citoyen Fondateur"
+    },
+    "about": {
+        "title": "À propos d'e-Maghreb",
+        "description": "e-Maghreb est une nation numérique conçue pour unir les citoyens maghrébins du monde entier, préservant notre riche patrimoine culturel tout en embrassant l'avenir de l'identité numérique et de la communauté.",
+        "values": {
+            "unity": {
+                "title": "Unité",
+                "description": "Rassembler les citoyens maghrébins des quatre coins du monde"
+            },
+            "identity": {
+                "title": "Identité Numérique",
+                "description": "Citoyenneté numérique sécurisée avec droits de vote et accès communautaire"
+            },
+            "culture": {
+                "title": "Culture",
+                "description": "Préserver et célébrer notre riche patrimoine et nos traditions maghrébines"
+            },
+            "empowerment": {
+                "title": "Autonomisation",
+                "description": "Donner aux citoyens les outils pour façonner l'avenir de notre nation numérique"
+            }
+        },
+        "vision": {
+            "title": "Notre Vision",
+            "description": "Créer une patrie numérique unifiée qui permet aux citoyens maghrébins du monde entier de bénéficier d'une identité numérique, d'une connexion culturelle et d'une gouvernance communautaire, en comblant les distances géographiques tout en célébrant notre héritage commun."
+        }
+    },
+    "community": {
+        "title": "Rejoignez notre communauté Reddit",
+        "subtitle": "Connectez-vous avec d'autres citoyens maghrébins et faites partie de notre nation numérique en pleine croissance",
+        "stats": {
+            "members": "Membres",
+            "online": "En ligne",
+            "discussions": "Discussions",
+            "growing": "Communauté grandissante",
+            "active": "Actif maintenant",
+            "join": "Rejoindre la conversation"
+        },
+        "features_title": "Ce que vous trouverez dans notre communauté",
+        "features": {
+            "discussions": {
+                "title": "Discussions Actives",
+                "description": "Participez à des conversations significatives sur la culture maghrébine et la construction de la nation numérique"
+            },
+            "exchange": {
+                "title": "Échange Culturel",
+                "description": "Partagez et apprenez sur les traditions, la langue et le patrimoine maghrébins"
+            },
+            "events": {
+                "title": "Événements Communautaires",
+                "description": "Participez à des rencontres virtuelles, des discussions et des célébrations culturelles"
+            },
+            "network": {
+                "title": "Réseautage",
+                "description": "Connectez-vous avec des professionnels et des leaders communautaires maghrébins du monde entier"
+            }
+        },
+        "ready": {
+            "title": "Prêt à rejoindre ?",
+            "description": "Faites partie de la conversation et aidez à façonner l'avenir de notre nation numérique",
+            "join_btn": "Rejoindre la communauté Reddit",
+            "share_btn": "Partager la communauté"
+        },
+        "share_modal": {
+            "title": "Partager Notre Communauté",
+            "help_text": "Aidez-nous à grandir en partageant avec votre réseau :",
+            "close": "Fermer",
+            "copied": "Lien copié dans le presse-papiers !"
+        }
+    },
+    "roadmap": {
+        "title": "Notre Voyage Ensemble",
+        "subtitle": "Regardez notre nation numérique grandir et débloquer de nouvelles fonctionnalités à mesure que nous atteignons les étapes communautaires",
+        "progress": {
+            "title": "Progrès de la Communauté",
+            "citizens": "Citoyens",
+            "next_milestone": "Prochaine étape : {target} Citoyens",
+            "needed": "{count} de plus nécessaires"
+        },
+        "milestones": {
+            "1": {
+                "title": "Phase de Fondation",
+                "description": "Construction de la communauté de base et établissement de notre présence numérique",
+                "features": [
+                    "Accès au forum communautaire de base",
+                    "Inscription à la citoyenneté numérique",
+                    "Pack de bienvenue et orientation",
+                    "Accès au Discord des membres fondateurs",
+                    "Droits de vote anticipés sur les décisions communautaires"
+                ]
+            },
+            "2": {
+                "title": "Croissance & Gouvernance",
+                "description": "Mise en œuvre de la gouvernance démocratique et expansion des fonctionnalités communautaires",
+                "features": [
+                    "Système de vote démocratique",
+                    "Propositions de gouvernance communautaire",
+                    "Profils de membres avancés",
+                    "Groupes communautaires régionaux",
+                    "Réunions communautaires mensuelles"
+                ]
+            },
+            "3": {
+                "title": "Services Numériques",
+                "description": "Lancement de services numériques essentiels pour tous les citoyens",
+                "features": [
+                    "Système de vérification d'identité numérique",
+                    "Plateforme de messagerie sécurisée",
+                    "Service de stockage de documents",
+                    "Marché communautaire",
+                    "Système de gestion d'événements"
+                ]
+            },
+            "4": {
+                "title": "Intégration Économique",
+                "description": "Création d'opportunités économiques et de partenariats",
+                "features": [
+                    "Intégration de la monnaie numérique",
+                    "Marché des freelances",
+                    "Hub de réseautage professionnel",
+                    "Opportunités d'investissement",
+                    "Partenariat avec les entreprises du Maghreb"
+                ]
+            },
+            "5": {
+                "title": "Statut de Nation Plein",
+                "description": "Atteindre les pleines capacités et la reconnaissance de la nation numérique",
+                "features": [
+                    "Reconnaissance diplomatique complète",
+                    "Partenariats internationaux",
+                    "Gouvernance IA avancée",
+                    "Programmes de préservation culturelle",
+                    "Représentation mondiale du Maghreb"
+                ]
+            }
+        },
+        "modal": {
+            "required": "{count} Citoyens Requis",
+            "features": "Fonctionnalités & Avantages",
+            "share_btn": "Partager cette étape",
+            "more_features": "+{count} autres fonctionnalités"
+        }
+    },
+    "social_proof": {
+        "title": "Rejoignez Notre Communauté Grandissante",
+        "subtitle": "Voyez ce que nos citoyens disent sur la construction de l'avenir de la nation numérique du Maghreb",
+        "stats": {
+            "citizens": "Total Citoyens",
+            "countries": "Pays Représentés",
+            "discussions": "Discussions Actives",
+            "satisfaction": "Taux de Satisfaction",
+            "week": "+{count} cette semaine",
+            "regions": "{count} régions",
+            "topics": "{count} sujets",
+            "surveys": "Basé sur des sondages"
+        },
+        "testimonials": {
+            "1": {
+                "title": "Ingénieur Logiciel",
+                "quote": "e-Maghreb m'a donné le sentiment d'appartenir à quelque chose de plus grand que moi. En tant que membre de la diaspora, je me sens enfin connecté à mes racines tout en contribuant à notre avenir numérique."
+            },
+            "2": {
+                "title": "Entrepreneur",
+                "quote": "Faire partie de cette nation numérique a ouvert des opportunités incroyables de collaboration. J'ai connecté avec des professionnels maghrébins talentueux sur trois continents."
+            },
+            "3": {
+                "title": "Étudiante",
+                "quote": "En tant que jeune Algérienne, e-Maghreb représente l'espoir d'unité et de progrès. Le soutien de la communauté a été incroyable pour ma croissance personnelle et professionnelle."
+            },
+            "4": {
+                "title": "Nomade Numérique",
+                "quote": "Vivant à l'étranger, e-Maghreb me garde connecté à ma culture et mon héritage. C'est plus qu'une plateforme - c'est un mouvement pour l'autonomisation maghrébine."
+            }
+        },
+        "stories": {
+            "read_more": "Lire plus",
+            "read_time": "{min} min de lecture",
+            "1": {
+                "category": "Éducation & Carrière",
+                "excerpt": "J'ai trouvé le job de mes rêves grâce aux connexions réseau e-Maghreb...",
+                "full": "Après avoir rejoint e-Maghreb, j'ai connecté avec des professionnels de mon domaine qui m'ont aidé à naviguer sur le marché du travail. Grâce au programme de mentorat communautaire, j'ai décroché un poste dans une entreprise technologique qui valorise la diversité et la compréhension culturelle. Le soutien que j'ai reçu était incroyable.",
+                "impact": "Transition de carrière réussie, augmentation de salaire de 40%, et mentorat d'autres membres de la communauté."
+            },
+            "2": {
+                "category": "Développement Commercial",
+                "excerpt": "Lancement d'une startup réussie avec des co-fondateurs rencontrés sur la plateforme...",
+                "full": "e-Maghreb m'a mis en contact avec des entrepreneurs partageant les mêmes idées de toute la région du Maghreb. Nous avons identifié un problème commun dans le commerce transfrontalier et construit une solution qui sert maintenant des centaines d'entreprises. La communauté a fourni à la fois expertise technique et perspectives de marché.",
+                "impact": "Généré 500K$ de revenus, créé 15 emplois, et expansion dans 3 pays."
+            },
+            "3": {
+                "category": "Préservation Culturelle",
+                "excerpt": "J'ai organisé le plus grand festival culturel maghrébin virtuel...",
+                "full": "En utilisant la plateforme e-Maghreb, j'ai organisé un festival culturel virtuel d'une semaine réunissant artistes, musiciens et experts culturels des cinq pays du Maghreb. L'événement a attiré plus de 10 000 participants et aidé à préserver les arts traditionnels pour les générations futures.",
+                "impact": "Connecté 200+ artistes, préservé 15 formes d'art traditionnelles, et inspiré des initiatives culturelles dans 8 villes."
+            }
+        },
+        "cta": {
+            "title": "Prêt à Partager Votre Histoire ?",
+            "subtitle": "Rejoignez des milliers de citoyens maghrébins construisant l'avenir ensemble",
+            "join_btn": "Rejoindre Notre Communauté",
+            "share_btn": "Partager Votre Histoire"
+        },
+        "modal": {
+            "story": "L'Histoire",
+            "impact": "Impact & Résultats",
+            "share_btn": "Partager Cette Histoire"
+        }
+    },
+    "join": {
+        "title": "Devenir Citoyen Fondateur",
+        "subtitle": "Rejoignez notre nation numérique et aidez à façonner l'avenir d'e-Maghreb. Les inscriptions ouvrent le 17 février 2026.",
+        "steps": {
+            "1": {
+                "title": "S'inscrire avec Email",
+                "description": "Enregistrez votre intérêt avec une adresse email valide pour rejoindre notre communauté de citoyens fondateurs"
+            },
+            "2": {
+                "title": "Recevoir l'ID Numérique",
+                "description": "Obtenez votre ID de citoyenneté numérique unique et vos identifiants d'accès via livraison email sécurisée"
+            },
+            "3": {
+                "title": "Rejoindre la Communauté",
+                "description": "Accédez aux canaux exclusifs Discord/forum et connectez-vous avec d'autres citoyens fondateurs"
+            }
+        },
+        "benefits": {
+            "title": "Avantages Citoyen Fondateur",
+            "1": {
+                "title": "Droits de Vote",
+                "description": "Participez à la gouvernance de la nation numérique et aux processus décisionnels"
+            },
+            "2": {
+                "title": "Accès Anticipé",
+                "description": "Obtenez un accès prioritaire aux nouvelles fonctionnalités et mises à jour de la plateforme avant la sortie publique"
+            },
+            "3": {
+                "title": "Réseau Exclusif",
+                "description": "Connectez-vous avec des professionnels, entrepreneurs et leaders communautaires maghrébins du monde entier"
+            }
+        },
+        "cta": {
+            "opens_on": "Les inscriptions ouvrent le",
+            "register_now": "S'inscrire Maintenant",
+            "join_waitlist": "Rejoindre la liste d'attente",
+            "notify": "Soyez parmi les premiers à savoir quand les inscriptions ouvrent"
+        }
+    },
+    "footer": {
+        "description": "Une nation numérique unissant les citoyens maghrébins mondialement à travers la technologie, la culture et la communauté.",
+        "quick_links": "Liens Rapides",
+        "contact": "Contact",
+        "legal": "Mentions Légales :",
+        "legal_text": "e-Maghreb est une initiative de nation numérique et une entité non gouvernementale.",
+        "rights": "Tous droits réservés.",
+        "privacy": "Politique de Confidentialité",
+        "terms": "Conditions d'Utilisation"
+    }
+}

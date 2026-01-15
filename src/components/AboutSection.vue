@@ -3,11 +3,10 @@
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-maghreb-dark mb-6">
-          About e-Maghreb
+          {{ t('about.title') }}
         </h2>
         <p class="text-lg md:text-xl text-black max-w-3xl mx-auto leading-relaxed">
-          e-Maghreb is a digital nation designed to unite Maghrebi citizens globally,
-          preserving our rich cultural heritage while embracing the future of digital identity and community.
+          {{ t('about.description') }}
         </p>
       </div>
 
@@ -34,10 +33,9 @@
 
       <div class="mt-16 text-center">
         <div class="bg-gradient-to-r from-maghreb-green to-maghreb-red rounded-2xl p-8 text-white">
-          <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+          <h3 class="text-2xl font-bold mb-4">{{ t('about.vision.title') }}</h3>
           <p class="text-lg opacity-90 max-w-2xl mx-auto">
-            To create a unified digital homeland that empowers Maghrebi citizens worldwide with digital identity,
-            cultural connection, and community governance, bridging geographical distances while celebrating our shared heritage.
+            {{ t('about.vision.description') }}
           </p>
         </div>
       </div>
@@ -46,7 +44,11 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { Users, Shield, Heart, Zap } from 'lucide-vue-next'
+import { useLanguage } from '../composables/useLanguage'
+
+const { t } = useLanguage()
 
 interface Value {
   title: string
@@ -54,28 +56,29 @@ interface Value {
   icon: any
 }
 
-const values: Value[] = [
+
+const values = computed(() => [
   {
-    title: 'Unity',
-    description: 'Bringing together Maghrebi citizens from all corners of the world',
+    title: t('about.values.unity.title'),
+    description: t('about.values.unity.description'),
     icon: Users
   },
   {
-    title: 'Digital Identity',
-    description: 'Secure digital citizenship with voting rights and community access',
+    title: t('about.values.identity.title'),
+    description: t('about.values.identity.description'),
     icon: Shield
   },
   {
-    title: 'Culture',
-    description: 'Preserving and celebrating our rich Maghrebi heritage and traditions',
+    title: t('about.values.culture.title'),
+    description: t('about.values.culture.description'),
     icon: Heart
   },
   {
-    title: 'Empowerment',
-    description: 'Giving citizens tools to shape our digital nation\'s future',
+    title: t('about.values.empowerment.title'),
+    description: t('about.values.empowerment.description'),
     icon: Zap
   }
-]
+])
 </script>
 
 <style scoped>

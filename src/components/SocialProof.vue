@@ -4,10 +4,10 @@
       <!-- Section Header -->
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-maghreb-dark mb-4">
-          Join Our Growing Community
+          {{ t('social_proof.title') }}
         </h2>
         <p class="text-lg md:text-xl text-black max-w-3xl mx-auto">
-          See what our citizens are saying about building the future of the Maghreb digital nation
+          {{ t('social_proof.subtitle') }}
         </p>
       </div>
 
@@ -15,26 +15,26 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16">
         <div class="bg-white rounded-lg shadow-lg p-6 text-center transform transition-transform hover:scale-105">
           <div class="text-3xl font-bold text-maghreb-green mb-2">{{ communityStats.totalCitizens }}</div>
-          <div class="text-black font-medium">Total Citizens</div>
-          <div class="text-sm text-maghreb-green mt-1">+{{ communityStats.newThisWeek }} this week</div>
+          <div class="text-black font-medium">{{ t('social_proof.stats.citizens') }}</div>
+          <div class="text-sm text-maghreb-green mt-1">{{ t('social_proof.stats.week').replace('{count}', String(communityStats.newThisWeek)) }}</div>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6 text-center transform transition-transform hover:scale-105">
           <div class="text-3xl font-bold text-maghreb-red mb-2">{{ communityStats.countries }}</div>
-          <div class="text-black font-medium">Countries Represented</div>
-          <div class="text-sm text-maghreb-red mt-1">{{ communityStats.regions }} regions</div>
+          <div class="text-black font-medium">{{ t('social_proof.stats.countries') }}</div>
+          <div class="text-sm text-maghreb-red mt-1">{{ t('social_proof.stats.regions').replace('{count}', String(communityStats.regions)) }}</div>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6 text-center transform transition-transform hover:scale-105">
           <div class="text-3xl font-bold text-maghreb-yellow mb-2">{{ communityStats.activeDiscussions }}</div>
-          <div class="text-black font-medium">Active Discussions</div>
-          <div class="text-sm text-maghreb-yellow mt-1">{{ communityStats.topics }} topics</div>
+          <div class="text-black font-medium">{{ t('social_proof.stats.discussions') }}</div>
+          <div class="text-sm text-maghreb-yellow mt-1">{{ t('social_proof.stats.topics').replace('{count}', String(communityStats.topics)) }}</div>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6 text-center transform transition-transform hover:scale-105">
           <div class="text-3xl font-bold text-maghreb-blue mb-2">{{ communityStats.satisfaction }}%</div>
-          <div class="text-black font-medium">Satisfaction Rate</div>
-          <div class="text-sm text-maghreb-blue mt-1">Based on surveys</div>
+          <div class="text-black font-medium">{{ t('social_proof.stats.satisfaction') }}</div>
+          <div class="text-sm text-maghreb-blue mt-1">{{ t('social_proof.stats.surveys') }}</div>
         </div>
       </div>
 
@@ -145,34 +145,34 @@
           <p class="text-black mb-4 line-clamp-3">{{ story.excerpt }}</p>
           <div class="flex items-center justify-between mt-auto">
             <span class="text-sm text-maghreb-green font-medium flex items-center group">
-              Read more
+              {{ t('social_proof.stories.read_more') }}
               <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </span>
-            <span class="text-xs text-gray-500">{{ story.readTime }} min read</span>
+            <span class="text-xs text-gray-500">{{ t('social_proof.stories.read_time').replace('{min}', String(story.readTime)) }}</span>
           </div>
         </div>
       </div>
 
       <!-- CTA Section -->
       <div class="text-center bg-gradient-to-r from-maghreb-green to-maghreb-red rounded-xl p-8 md:p-12 text-white shadow-2xl">
-        <h3 class="text-2xl md:text-3xl font-bold mb-4">Ready to Share Your Story?</h3>
+        <h3 class="text-2xl md:text-3xl font-bold mb-4">{{ t('social_proof.cta.title') }}</h3>
         <p class="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-          Join thousands of Maghrebi citizens building the future together
+          {{ t('social_proof.cta.subtitle') }}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             @click="joinCommunity"
             class="bg-white text-maghreb-green px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
           >
-            Join Our Community
+            {{ t('social_proof.cta.join_btn') }}
           </button>
           <button
             @click="shareStory()"
             class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all transform hover:scale-105"
           >
-            Share Your Story
+            {{ t('social_proof.cta.share_btn') }}
           </button>
         </div>
       </div>
@@ -210,11 +210,11 @@
             </div>
 
             <div class="prose max-w-none">
-              <h4 class="text-lg font-semibold text-maghreb-dark mb-2">The Story</h4>
+              <h4 class="text-lg font-semibold text-maghreb-dark mb-2">{{ t('social_proof.modal.story') }}</h4>
               <p class="text-black mb-6 leading-relaxed">{{ selectedStory.fullStory }}</p>
 
               <div class="bg-maghreb-light rounded-lg p-5 border-l-4 border-maghreb-green">
-                <h4 class="font-semibold text-maghreb-dark mb-2">Impact & Results</h4>
+                <h4 class="font-semibold text-maghreb-dark mb-2">{{ t('social_proof.modal.impact') }}</h4>
                 <p class="text-black/80">{{ selectedStory.impact }}</p>
               </div>
             </div>
@@ -227,7 +227,7 @@
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                 </svg>
-                Share This Story
+                {{ t('social_proof.modal.share_btn') }}
               </button>
             </div>
           </div>
@@ -238,7 +238,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useLanguage } from '../composables/useLanguage'
+
+const { t } = useLanguage()
 
 interface Testimonial {
   id: string
@@ -283,67 +286,67 @@ const communityStats = ref<CommunityStats>({
   satisfaction: 95
 })
 
-const testimonials = ref<Testimonial[]>([
+const testimonials = computed<Testimonial[]>(() => [
   {
     id: '1',
     name: 'Amina B.',
-    title: 'Software Engineer',
+    title: t('social_proof.testimonials.1.title'),
     location: 'Casablanca, Morocco',
-    quote: 'e-Maghreb has given me a sense of belonging to something bigger than myself. As a diaspora member, I finally feel connected to my roots while contributing to our digital future.',
+    quote: t('social_proof.testimonials.1.quote'),
     rating: 5
   },
   {
     id: '2',
     name: 'Karim T.',
-    title: 'Entrepreneur',
+    title: t('social_proof.testimonials.2.title'),
     location: 'Tunis, Tunisia',
-    quote: 'Being part of this digital nation has opened incredible opportunities for collaboration. I\'ve connected with talented Maghrebi professionals across three continents.',
+    quote: t('social_proof.testimonials.2.quote'),
     rating: 5
   },
   {
     id: '3',
     name: 'Sofia M.',
-    title: 'Student',
+    title: t('social_proof.testimonials.3.title'),
     location: 'Algiers, Algeria',
-    quote: 'As a young Algerian, e-Maghreb represents hope for unity and progress. The community support has been amazing for my personal and professional growth.',
+    quote: t('social_proof.testimonials.3.quote'),
     rating: 5
   },
   {
     id: '4',
     name: 'Youssef L.',
-    title: 'Digital Nomad',
+    title: t('social_proof.testimonials.4.title'),
     location: 'Barcelona, Spain',
-    quote: 'Living abroad, e-Maghreb keeps me connected to my culture and heritage. It\'s more than a platform - it\'s a movement for Maghrebi empowerment.',
+    quote: t('social_proof.testimonials.4.quote'),
     rating: 5
   }
 ])
 
-const userStories = ref<UserStory[]>([
+const userStories = computed<UserStory[]>(() => [
   {
     id: '1',
     name: 'Leila H.',
-    category: 'Education & Career',
-    excerpt: 'Found my dream job through e-Maghreb network connections...',
-    fullStory: 'After joining e-Maghreb, I connected with professionals in my field who helped me navigate the job market. Through the community mentorship program, I landed a position at a tech company that values diversity and cultural understanding. The support I received was incredible.',
-    impact: 'Successfully transitioned careers, increased salary by 40%, and now mentors other community members.',
+    category: t('social_proof.stories.1.category'),
+    excerpt: t('social_proof.stories.1.excerpt'),
+    fullStory: t('social_proof.stories.1.full'),
+    impact: t('social_proof.stories.1.impact'),
     readTime: 3
   },
   {
     id: '2',
     name: 'Ahmed R.',
-    category: 'Business Development',
-    excerpt: 'Launched a successful startup with co-founders met through the platform...',
-    fullStory: 'e-Maghreb connected me with like-minded entrepreneurs from across the Maghreb region. We identified a common problem in cross-border trade and built a solution that now serves hundreds of businesses. The community provided both technical expertise and market insights.',
-    impact: 'Generated $500K in revenue, created 15 jobs, and expanded to 3 countries.',
+    category: t('social_proof.stories.2.category'),
+    excerpt: t('social_proof.stories.2.excerpt'),
+    fullStory: t('social_proof.stories.2.full'),
+    impact: t('social_proof.stories.2.impact'),
     readTime: 4
   },
   {
     id: '3',
     name: 'Nadia K.',
-    category: 'Cultural Preservation',
-    excerpt: 'Organized the largest virtual Maghrebi cultural festival...',
-    fullStory: 'Using e-Maghreb platform, I organized a week-long virtual cultural festival that brought together artists, musicians, and cultural experts from all five Maghreb countries. The event attracted over 10,000 participants and helped preserve traditional arts for future generations.',
-    impact: 'Connected 200+ artists, preserved 15 traditional art forms, and inspired cultural initiatives in 8 cities.',
+    category: t('social_proof.stories.3.category'),
+    excerpt: t('social_proof.stories.3.excerpt'),
+    fullStory: t('social_proof.stories.3.full'),
+    impact: t('social_proof.stories.3.impact'),
     readTime: 5
   }
 ])

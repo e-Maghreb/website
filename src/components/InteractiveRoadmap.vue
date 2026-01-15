@@ -4,17 +4,17 @@
       <!-- Section Header -->
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-maghreb-dark mb-4">
-          Our Journey Together
+          {{ t('roadmap.title') }}
         </h2>
         <p class="text-lg md:text-xl text-black max-w-3xl mx-auto">
-          Watch our digital nation grow and unlock new features as we reach community milestones
+          {{ t('roadmap.subtitle') }}
         </p>
 
         <!-- Community Progress Overview -->
         <div class="mt-8 bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
           <div class="flex items-center justify-between mb-4">
-            <span class="text-lg font-semibold text-maghreb-dark">Community Progress</span>
-            <span class="text-2xl font-bold text-maghreb-green">{{ currentMembers }} Citizens</span>
+            <span class="text-lg font-semibold text-maghreb-dark">{{ t('roadmap.progress.title') }}</span>
+            <span class="text-2xl font-bold text-maghreb-green">{{ currentMembers }} {{ t('roadmap.progress.citizens') }}</span>
           </div>
           <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
             <div
@@ -24,7 +24,7 @@
           </div>
           <div class="flex justify-between text-sm text-black">
             <span>0</span>
-            <span class="hidden sm:inline font-medium">Next Milestone: {{ nextMilestone.target }} Citizens</span>
+            <span class="hidden sm:inline font-medium">{{ t('roadmap.progress.next_milestone').replace('{target}', nextMilestone.target) }}</span>
             <span>{{ maxTarget }}</span>
           </div>
         </div>
@@ -77,7 +77,7 @@
                       'bg-gray-100 text-gray-600': !milestone.achieved
                     }"
                   >
-                    {{ milestone.target }} Citizens
+                    {{ milestone.target }} {{ t('roadmap.progress.citizens') }}
                   </span>
                 </div>
 
@@ -102,14 +102,14 @@
                     <span :class="milestone.achieved ? 'text-black' : 'text-black'">{{ feature }}</span>
                   </div>
                   <div v-if="milestone.features.length > 3" class="text-sm text-black">
-                    +{{ milestone.features.length - 3 }} more features
+                    {{ t('roadmap.modal.more_features').replace('{count}', String(milestone.features.length - 3)) }}
                   </div>
                 </div>
 
                 <!-- Progress Indicator -->
                 <div v-if="!milestone.achieved && currentMembers < milestone.target" class="mt-4">
                   <div class="flex justify-between text-xs text-gray-500 mb-1">
-                    <span>{{ Math.max(0, milestone.target - currentMembers) }} more needed</span>
+                    <span>{{ t('roadmap.progress.needed').replace('{count}', String(Math.max(0, milestone.target - currentMembers))) }}</span>
                     <span>{{ Math.min(100, Math.round((currentMembers / milestone.target) * 100)) }}%</span>
                   </div>
                   <div class="w-full bg-gray-200 rounded-full h-2">
@@ -154,7 +154,7 @@
             <div class="flex justify-between items-start mb-4">
               <div>
                 <h3 class="text-2xl font-bold text-maghreb-dark">{{ selectedMilestone.title }}</h3>
-                <p class="text-maghreb-green font-medium">{{ selectedMilestone.target }} Citizens Required</p>
+                <p class="text-maghreb-green font-medium">{{ t('roadmap.modal.required').replace('{count}', String(selectedMilestone.target)) }}</p>
               </div>
               <button
                 @click="selectedMilestone = null"
@@ -170,7 +170,7 @@
             <p class="text-black mb-6">{{ selectedMilestone.description }}</p>
 
             <div class="mb-6">
-              <h4 class="text-lg font-semibold text-maghreb-dark mb-3">Features & Benefits</h4>
+              <h4 class="text-lg font-semibold text-maghreb-dark mb-3">{{ t('roadmap.modal.features') }}</h4>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div
                   v-for="feature in selectedMilestone.features"
@@ -190,7 +190,7 @@
                 @click="shareMilestone(selectedMilestone)"
                 class="bg-maghreb-green text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors"
               >
-                Share This Milestone
+                {{ t('roadmap.modal.share_btn') }}
               </button>
             </div>
           </div>
@@ -202,6 +202,9 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import { useLanguage } from '../composables/useLanguage'
+
+const { t } = useLanguage()
 
 interface Milestone {
   id: string
@@ -217,80 +220,50 @@ const currentMembers = ref(2) // Based on Reddit community data
 const hoveredMilestone = ref<string | null>(null)
 const selectedMilestone = ref<Milestone | null>(null)
 
-const milestones = ref<Milestone[]>([
+const milestones = computed<Milestone[]>(() => [
   {
     id: '1',
-    title: 'Foundation Phase',
-    description: 'Building the core community and establishing our digital presence',
+    title: t('roadmap.milestones.1.title'),
+    description: t('roadmap.milestones.1.description'),
     target: 100,
     achieved: false,
-    features: [
-      'Basic community forum access',
-      'Digital citizenship registration',
-      'Welcome package and orientation',
-      'Access to founding member Discord',
-      'Early voting rights on community decisions'
-    ],
+    features: t('roadmap.milestones.1.features'),
     date: 'Q4 2025'
   },
   {
     id: '2',
-    title: 'Growth & Governance',
-    description: 'Implementing democratic governance and expanding community features',
+    title: t('roadmap.milestones.2.title'),
+    description: t('roadmap.milestones.2.description'),
     target: 500,
     achieved: false,
-    features: [
-      'Democratic voting system',
-      'Community governance proposals',
-      'Advanced member profiles',
-      'Regional community groups',
-      'Monthly community meetings'
-    ],
+    features: t('roadmap.milestones.2.features'),
     date: 'Q1 2026'
   },
   {
     id: '3',
-    title: 'Digital Services',
-    description: 'Launching essential digital services for all citizens',
+    title: t('roadmap.milestones.3.title'),
+    description: t('roadmap.milestones.3.description'),
     target: 1000,
     achieved: false,
-    features: [
-      'Digital ID verification system',
-      'Secure messaging platform',
-      'Document storage service',
-      'Community marketplace',
-      'Event management system'
-    ],
+    features: t('roadmap.milestones.3.features'),
     date: 'Q2 2026'
   },
   {
     id: '4',
-    title: 'Economic Integration',
-    description: 'Creating economic opportunities and partnerships',
+    title: t('roadmap.milestones.4.title'),
+    description: t('roadmap.milestones.4.description'),
     target: 5000,
     achieved: false,
-    features: [
-      'Digital currency integration',
-      'Freelancer marketplace',
-      'Business networking hub',
-      'Investment opportunities',
-      'Partnership with Maghreb businesses'
-    ],
+    features: t('roadmap.milestones.4.features'),
     date: 'Q3 2026'
   },
   {
     id: '5',
-    title: 'Full Nation Status',
-    description: 'Achieving full digital nation capabilities and recognition',
+    title: t('roadmap.milestones.5.title'),
+    description: t('roadmap.milestones.5.description'),
     target: 10000,
     achieved: false,
-    features: [
-      'Full diplomatic recognition',
-      'International partnerships',
-      'Advanced AI governance',
-      'Cultural preservation programs',
-      'Global Maghreb representation'
-    ],
+    features: t('roadmap.milestones.5.features'),
     date: 'Q4 2026'
   }
 ])

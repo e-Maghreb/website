@@ -1,23 +1,29 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, RouterView } from 'vue-router'
 import HomePage from '@/pages/HomePage.vue'
 import PrivacyPolicy from '@/pages/PrivacyPolicy.vue'
 import TermsOfService from '@/pages/TermsOfService.vue'
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomePage,
-  },
-  {
-    path: '/privacy',
-    name: 'privacy',
-    component: PrivacyPolicy,
-  },
-  {
-    path: '/terms',
-    name: 'terms',
-    component: TermsOfService,
+    path: '/:lang(fr|ar)?',
+    component: RouterView,
+    children: [
+      {
+        path: '',
+        name: 'home',
+        component: HomePage,
+      },
+      {
+        path: 'privacy',
+        name: 'privacy',
+        component: PrivacyPolicy,
+      },
+      {
+        path: 'terms',
+        name: 'terms',
+        component: TermsOfService,
+      },
+    ],
   },
 ]
 

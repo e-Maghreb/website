@@ -8,20 +8,20 @@
     <!-- Content -->
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
       <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-        Welcome to e-Maghreb
+        {{ t('hero.welcome') }}
       </h1>
       <p class="text-xl md:text-2xl lg:text-3xl mb-8 text-maghreb-light animate-slide-up">
-        Your Digital Nation
+        {{ t('hero.subtitle') }}
       </p>
       <p class="text-lg md:text-xl mb-12 text-maghreb-light opacity-90 max-w-2xl mx-auto animate-slide-up">
-        Connecting Maghrebi citizens across the globe
+        {{ t('hero.description') }}
       </p>
 
       <button
         @click="handleCtaClick"
         class="bg-maghreb-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-slide-up"
       >
-        Become a Founding Citizen
+        {{ t('hero.cta') }}
       </button>
     </div>
 
@@ -35,7 +35,9 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits } from 'vue'
+import { useLanguage } from '../composables/useLanguage'
+
+const { t } = useLanguage()
 
 const emit = defineEmits<{
   ctaClick: []

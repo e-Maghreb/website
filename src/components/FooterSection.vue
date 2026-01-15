@@ -6,7 +6,7 @@
         <div class="md:col-span-2">
           <h3 class="text-2xl font-bold mb-4 text-maghreb-green">e-Maghreb</h3>
           <p class="text-white mb-6 max-w-md">
-            A digital nation uniting Maghrebi citizens globally through technology, culture, and community.
+            {{ t('footer.description') }}
           </p>
           <div class="flex space-x-4">
             <a
@@ -25,7 +25,7 @@
 
         <!-- Quick Links -->
         <div>
-          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <h4 class="text-lg font-semibold mb-4">{{ t('footer.quick_links') }}</h4>
           <ul class="space-y-2">
             <li v-for="(link, index) in quickLinks" :key="index">
               <a
@@ -41,7 +41,7 @@
 
         <!-- Contact -->
         <div>
-          <h4 class="text-lg font-semibold mb-4">Contact</h4>
+          <h4 class="text-lg font-semibold mb-4">{{ t('footer.contact') }}</h4>
           <div class="space-y-2">
             <a
               href="mailto:hello@e-maghreb.org"
@@ -64,10 +64,10 @@
           <!-- Legal Notice -->
           <div class="text-sm text-gray-400 text-center md:text-left">
             <p class="mb-2">
-              <strong>Legal Notice:</strong> e-Maghreb is a digital nation initiative and non-governmental entity.
+              <strong>{{ t('footer.legal') }}</strong> {{ t('footer.legal_text') }}
             </p>
             <p>
-              © 2025 e-Maghreb. All rights reserved.
+              © 2025 e-Maghreb. {{ t('footer.rights') }}
             </p>
           </div>
 
@@ -77,13 +77,13 @@
               to="/privacy"
               class="text-gray-400 hover:text-maghreb-green transition-colors duration-300"
             >
-              Privacy Policy
+              {{ t('footer.privacy') }}
             </router-link>
             <router-link
               to="/terms"
               class="text-gray-400 hover:text-maghreb-green transition-colors duration-300"
             >
-              Terms of Service
+              {{ t('footer.terms') }}
             </router-link>
           </div>
         </div>
@@ -93,7 +93,11 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Globe } from 'lucide-vue-next'
+import { useLanguage } from '../composables/useLanguage'
+
+const { t } = useLanguage()
 
 interface SocialLink {
   name: string
@@ -129,11 +133,11 @@ const socialLinks: SocialLink[] = [
   }
 ]
 
-const quickLinks: QuickLink[] = [
-  { text: 'About', href: '#about' },
-  { text: 'Roadmap', href: '#roadmap' },
-  { text: 'Join', href: '#join' }
-]
+const quickLinks = computed<QuickLink[]>(() => [
+  { text: t('nav.about'), href: '#about' },
+  { text: t('nav.roadmap'), href: '#roadmap' },
+  { text: t('nav.join'), href: '#join' }
+])
 
 const scrollToSection = (href: string) => {
   const element = document.querySelector(href)

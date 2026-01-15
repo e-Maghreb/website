@@ -3,10 +3,10 @@
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-          Join Our Reddit Community
+          {{ t('community.title') }}
         </h2>
         <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-          Connect with fellow Maghrebi citizens and be part of our growing digital nation
+          {{ t('community.subtitle') }}
         </p>
       </div>
 
@@ -27,7 +27,7 @@
 
       <!-- Community Features -->
       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-12">
-        <h3 class="text-2xl font-bold text-white mb-8 text-center">What You'll Find in Our Community</h3>
+        <h3 class="text-2xl font-bold text-white mb-8 text-center">{{ t('community.features_title') }}</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div
             v-for="(feature, index) in communityFeatures"
@@ -46,9 +46,9 @@
       <!-- CTA Section -->
       <div class="text-center">
         <div class="bg-white rounded-2xl p-8 max-w-2xl mx-auto">
-          <h3 class="text-2xl font-bold text-maghreb-dark mb-4">Ready to Join?</h3>
+          <h3 class="text-2xl font-bold text-maghreb-dark mb-4">{{ t('community.ready.title') }}</h3>
           <p class="text-black mb-6">
-            Be part of the conversation and help shape the future of our digital nation
+            {{ t('community.ready.description') }}
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -60,14 +60,14 @@
               <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2A10 10 0 0 0 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0 0 12 2zm5.75 13.3c-.23.3-.54.4-.88.23-1.3-.6-2.7-.9-4.2-.9s-2.9.3-4.2.9c-.34.17-.65.07-.88-.23-.3-.3-.2-.65.17-.88 1.6-.8 3.4-1.2 5.3-1.2s3.7.4 5.3 1.2c.37.23.47.58.17.88zM8.5 12.5c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm7 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"/>
               </svg>
-              Join Reddit Community
+              {{ t('community.ready.join_btn') }}
             </a>
             <button
               @click="shareCommunity"
               class="bg-maghreb-green hover:bg-maghreb-green/90 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
             >
               <Share2 class="w-5 h-5 mr-2" />
-              Share Community
+              {{ t('community.ready.share_btn') }}
             </button>
           </div>
         </div>
@@ -76,8 +76,8 @@
       <!-- Share Modal -->
       <div v-if="showShareModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50" @click="closeShareModal">
         <div class="bg-white rounded-2xl p-8 max-w-md mx-4" @click.stop>
-          <h3 class="text-xl font-bold text-maghreb-dark mb-4">Share Our Community</h3>
-          <p class="text-gray-600 mb-6">Help us grow by sharing with your network:</p>
+          <h3 class="text-xl font-bold text-maghreb-dark mb-4">{{ t('community.share_modal.title') }}</h3>
+          <p class="text-gray-600 mb-6">{{ t('community.share_modal.help_text') }}</p>
           <div class="grid grid-cols-2 gap-4">
             <button
               v-for="(platform, index) in sharePlatforms"
@@ -93,7 +93,7 @@
             @click="closeShareModal"
             class="mt-6 w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-lg transition-colors duration-300"
           >
-            Close
+            {{ t('community.share_modal.close') }}
           </button>
         </div>
       </div>
@@ -102,8 +102,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { Users, MessageCircle, Lightbulb, Calendar, Share2, Facebook, Twitter, Link2, Mail } from 'lucide-vue-next'
+import { useLanguage } from '../composables/useLanguage'
+
+const { t } = useLanguage()
 
 interface CommunityStat {
   count: string
@@ -126,34 +129,34 @@ interface SharePlatform {
 const showShareModal = ref(false)
 
 // Community stats - would be fetched from Reddit API in production
-const communityStats = ref<CommunityStat[]>([
-  { count: '2', label: 'Members', description: 'Growing community' },
-  { count: '2', label: 'Online', description: 'Active right now' },
-  { count: '0', label: 'Discussions', description: 'Join the conversation' }
+const communityStats = computed(() => [
+  { count: '2', label: t('community.stats.members'), description: t('community.stats.growing') },
+  { count: '2', label: t('community.stats.online'), description: t('community.stats.active') },
+  { count: '0', label: t('community.stats.discussions'), description: t('community.stats.join') }
 ])
 
-const communityFeatures = [
+const communityFeatures = computed(() => [
   {
-    title: 'Active Discussions',
-    description: 'Engage in meaningful conversations about Maghrebi culture and digital nation building',
+    title: t('community.features.discussions.title'),
+    description: t('community.features.discussions.description'),
     icon: MessageCircle
   },
   {
-    title: 'Cultural Exchange',
-    description: 'Share and learn about Maghrebi traditions, language, and heritage',
+    title: t('community.features.exchange.title'),
+    description: t('community.features.exchange.description'),
     icon: Lightbulb
   },
   {
-    title: 'Community Events',
-    description: 'Participate in virtual meetups, discussions, and cultural celebrations',
+    title: t('community.features.events.title'),
+    description: t('community.features.events.description'),
     icon: Calendar
   },
   {
-    title: 'Network Building',
-    description: 'Connect with Maghrebi professionals and community leaders worldwide',
+    title: t('community.features.network.title'),
+    description: t('community.features.network.description'),
     icon: Users
   }
-]
+])
 
 const sharePlatforms: SharePlatform[] = [
   {
@@ -206,7 +209,7 @@ const closeShareModal = () => {
 const shareOnPlatform = (platform: SharePlatform) => {
   if (platform.url === 'copy') {
     navigator.clipboard.writeText('https://www.reddit.com/r/eMaghreb/')
-    alert('Link copied to clipboard!')
+    alert(t('community.share_modal.copied'))
   } else {
     window.open(platform.url, '_blank', 'width=600,height=400')
   }

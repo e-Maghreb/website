@@ -1,0 +1,271 @@
+{
+    "nav": {
+        "about": "About",
+        "community": "Community",
+        "roadmap": "Roadmap",
+        "stories": "Stories",
+        "join": "Join Now"
+    },
+    "hero": {
+        "welcome": "Welcome to e-Maghreb",
+        "subtitle": "Your Digital Nation",
+        "description": "Connecting Maghrebi citizens across the globe",
+        "cta": "Become a Founding Citizen"
+    },
+    "about": {
+        "title": "About e-Maghreb",
+        "description": "e-Maghreb is a digital nation designed to unite Maghrebi citizens globally, preserving our rich cultural heritage while embracing the future of digital identity and community.",
+        "values": {
+            "unity": {
+                "title": "Unity",
+                "description": "Bringing together Maghrebi citizens from all corners of the world"
+            },
+            "identity": {
+                "title": "Digital Identity",
+                "description": "Secure digital citizenship with voting rights and community access"
+            },
+            "culture": {
+                "title": "Culture",
+                "description": "Preserving and celebrating our rich Maghrebi heritage and traditions"
+            },
+            "empowerment": {
+                "title": "Empowerment",
+                "description": "Giving citizens tools to shape our digital nation's future"
+            }
+        },
+        "vision": {
+            "title": "Our Vision",
+            "description": "To create a unified digital homeland that empowers Maghrebi citizens worldwide with digital identity, cultural connection, and community governance, bridging geographical distances while celebrating our shared heritage."
+        }
+    },
+    "community": {
+        "title": "Join Our Reddit Community",
+        "subtitle": "Connect with fellow Maghrebi citizens and be part of our growing digital nation",
+        "stats": {
+            "members": "Members",
+            "online": "Online",
+            "discussions": "Discussions",
+            "growing": "Growing community",
+            "active": "Active right now",
+            "join": "Join the conversation"
+        },
+        "features_title": "What You'll Find in Our Community",
+        "features": {
+            "discussions": {
+                "title": "Active Discussions",
+                "description": "Engage in meaningful conversations about Maghrebi culture and digital nation building"
+            },
+            "exchange": {
+                "title": "Cultural Exchange",
+                "description": "Share and learn about Maghrebi traditions, language, and heritage"
+            },
+            "events": {
+                "title": "Community Events",
+                "description": "Participate in virtual meetups, discussions, and cultural celebrations"
+            },
+            "network": {
+                "title": "Network Building",
+                "description": "Connect with Maghrebi professionals and community leaders worldwide"
+            }
+        },
+        "ready": {
+            "title": "Ready to Join?",
+            "description": "Be part of the conversation and help shape the future of our digital nation",
+            "join_btn": "Join Reddit Community",
+            "share_btn": "Share Community"
+        },
+        "share_modal": {
+            "title": "Share Our Community",
+            "help_text": "Help us grow by sharing with your network:",
+            "close": "Close",
+            "copied": "Link copied to clipboard!"
+        }
+    },
+    "roadmap": {
+        "title": "Our Journey Together",
+        "subtitle": "Watch our digital nation grow and unlock new features as we reach community milestones",
+        "progress": {
+            "title": "Community Progress",
+            "citizens": "Citizens",
+            "next_milestone": "Next Milestone: {target} Citizens",
+            "needed": "{count} more needed"
+        },
+        "milestones": {
+            "1": {
+                "title": "Foundation Phase",
+                "description": "Building the core community and establishing our digital presence",
+                "features": [
+                    "Basic community forum access",
+                    "Digital citizenship registration",
+                    "Welcome package and orientation",
+                    "Access to founding member Discord",
+                    "Early voting rights on community decisions"
+                ]
+            },
+            "2": {
+                "title": "Growth & Governance",
+                "description": "Implementing democratic governance and expanding community features",
+                "features": [
+                    "Democratic voting system",
+                    "Community governance proposals",
+                    "Advanced member profiles",
+                    "Regional community groups",
+                    "Monthly community meetings"
+                ]
+            },
+            "3": {
+                "title": "Digital Services",
+                "description": "Launching essential digital services for all citizens",
+                "features": [
+                    "Digital ID verification system",
+                    "Secure messaging platform",
+                    "Document storage service",
+                    "Community marketplace",
+                    "Event management system"
+                ]
+            },
+            "4": {
+                "title": "Economic Integration",
+                "description": "Creating economic opportunities and partnerships",
+                "features": [
+                    "Digital currency integration",
+                    "Freelancer marketplace",
+                    "Business networking hub",
+                    "Investment opportunities",
+                    "Partnership with Maghreb businesses"
+                ]
+            },
+            "5": {
+                "title": "Full Nation Status",
+                "description": "Achieving full digital nation capabilities and recognition",
+                "features": [
+                    "Full diplomatic recognition",
+                    "International partnerships",
+                    "Advanced AI governance",
+                    "Cultural preservation programs",
+                    "Global Maghreb representation"
+                ]
+            }
+        },
+        "modal": {
+            "required": "{count} Citizens Required",
+            "features": "Features & Benefits",
+            "share_btn": "Share This Milestone",
+            "more_features": "+{count} more features"
+        }
+    },
+    "social_proof": {
+        "title": "Join Our Growing Community",
+        "subtitle": "See what our citizens are saying about building the future of the Maghreb digital nation",
+        "stats": {
+            "citizens": "Total Citizens",
+            "countries": "Countries Represented",
+            "discussions": "Active Discussions",
+            "satisfaction": "Satisfaction Rate",
+            "week": "+{count} this week",
+            "regions": "{count} regions",
+            "topics": "{count} topics",
+            "surveys": "Based on surveys"
+        },
+        "testimonials": {
+            "1": {
+                "title": "Software Engineer",
+                "quote": "e-Maghreb has given me a sense of belonging to something bigger than myself. As a diaspora member, I finally feel connected to my roots while contributing to our digital future."
+            },
+            "2": {
+                "title": "Entrepreneur",
+                "quote": "Being part of this digital nation has opened incredible opportunities for collaboration. I've connected with talented Maghrebi professionals across three continents."
+            },
+            "3": {
+                "title": "Student",
+                "quote": "As a young Algerian, e-Maghreb represents hope for unity and progress. The community support has been amazing for my personal and professional growth."
+            },
+            "4": {
+                "title": "Digital Nomad",
+                "quote": "Living abroad, e-Maghreb keeps me connected to my culture and heritage. It's more than a platform - it's a movement for Maghrebi empowerment."
+            }
+        },
+        "stories": {
+            "read_more": "Read more",
+            "read_time": "{min} min read",
+            "1": {
+                "category": "Education & Career",
+                "excerpt": "Found my dream job through e-Maghreb network connections...",
+                "full": "After joining e-Maghreb, I connected with professionals in my field who helped me navigate the job market. Through the community mentorship program, I landed a position at a tech company that values diversity and cultural understanding. The support I received was incredible.",
+                "impact": "Successfully transitioned careers, increased salary by 40%, and now mentors other community members."
+            },
+            "2": {
+                "category": "Business Development",
+                "excerpt": "Launched a successful startup with co-founders met through the platform...",
+                "full": "e-Maghreb connected me with like-minded entrepreneurs from across the Maghreb region. We identified a common problem in cross-border trade and built a solution that now serves hundreds of businesses. The community provided both technical expertise and market insights.",
+                "impact": "Generated $500K in revenue, created 15 jobs, and expanded to 3 countries."
+            },
+            "3": {
+                "category": "Cultural Preservation",
+                "excerpt": "Organized the largest virtual Maghrebi cultural festival...",
+                "full": "Using e-Maghreb platform, I organized a week-long virtual cultural festival that brought together artists, musicians, and cultural experts from all five Maghreb countries. The event attracted over 10,000 participants and helped preserve traditional arts for future generations.",
+                "impact": "Connected 200+ artists, preserved 15 traditional art forms, and inspired cultural initiatives in 8 cities."
+            }
+        },
+        "cta": {
+            "title": "Ready to Share Your Story?",
+            "subtitle": "Join thousands of Maghrebi citizens building the future together",
+            "join_btn": "Join Our Community",
+            "share_btn": "Share Your Story"
+        },
+        "modal": {
+            "story": "The Story",
+            "impact": "Impact & Results",
+            "share_btn": "Share This Story"
+        }
+    },
+    "join": {
+        "title": "Become a Founding Citizen",
+        "subtitle": "Join our digital nation and help shape the future of e-Maghreb. Registration opens on February 17, 2026.",
+        "steps": {
+            "1": {
+                "title": "Sign Up with Email",
+                "description": "Register your interest with a valid email address to join our founding citizen community"
+            },
+            "2": {
+                "title": "Receive Digital ID",
+                "description": "Get your unique digital citizenship ID and access credentials via secure email delivery"
+            },
+            "3": {
+                "title": "Join Community",
+                "description": "Access exclusive Discord/forum channels and connect with fellow founding citizens"
+            }
+        },
+        "benefits": {
+            "title": "Founding Citizen Benefits",
+            "1": {
+                "title": "Voting Rights",
+                "description": "Participate in digital nation governance and decision-making processes"
+            },
+            "2": {
+                "title": "Early Access",
+                "description": "Get priority access to new features and platform updates before public release"
+            },
+            "3": {
+                "title": "Exclusive Network",
+                "description": "Connect with Maghrebi professionals, entrepreneurs, and community leaders worldwide"
+            }
+        },
+        "cta": {
+            "opens_on": "Registration opens on",
+            "register_now": "Register Now",
+            "join_waitlist": "Join Waitlist",
+            "notify": "Be among the first to know when registration opens"
+        }
+    },
+    "footer": {
+        "description": "A digital nation uniting Maghrebi citizens globally through technology, culture, and community.",
+        "quick_links": "Quick Links",
+        "contact": "Contact",
+        "legal": "Legal Notice:",
+        "legal_text": "e-Maghreb is a digital nation initiative and non-governmental entity.",
+        "rights": "All rights reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
+    }
+}
