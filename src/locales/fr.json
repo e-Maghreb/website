@@ -267,5 +267,12 @@
         "rights": "Tous droits réservés.",
         "privacy": "Politique de Confidentialité",
         "terms": "Conditions d'Utilisation"
+    },
+    "meta": {
+        "title": "e-Maghreb | La Nation Numérique pour les Citoyens Maghrébins",
+        "description": "Rejoignez e-Maghreb, la nation numérique unissant les citoyens maghrébins du monde entier. Connectez-vous, votez et construisez notre avenir numérique commun avec une identité sécurisée et une gouvernance communautaire.",
+        "keywords": "e-Maghreb, eMaghreb, e Maghreb, Maghreb, Maghrébins, Berbères, Sahraouis, Le Grand Maghreb, Le Maghreb Arabe, Afrique du Nord, Nation Numérique, Communauté, Maroc, Algérie, Tunisie, Libye, Mauritanie, Diaspora",
+        "og_title": "e-Maghreb | La Nation Numérique",
+        "og_description": "Rejoignez e-Maghreb, la nation numérique unissant les citoyens maghrébins du monde entier. Connectez-vous, votez et construisez notre avenir numérique commun."
     }
 }

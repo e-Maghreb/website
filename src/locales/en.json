@@ -267,5 +267,12 @@
         "rights": "All rights reserved.",
         "privacy": "Privacy Policy",
         "terms": "Terms of Service"
+    },
+    "meta": {
+        "title": "e-Maghreb | The Digital Nation for Maghrebi Citizens",
+        "description": "Join e-Maghreb, the digital nation uniting Maghrebi citizens worldwide. Connect, vote, and build our shared digital future with secure identity and community governance.",
+        "keywords": "e-Maghreb, eMaghreb, e Maghreb, Maghreb, Maghrebi, Berbers, Sahrawis, The Greater Maghreb, The Arab Maghreb, North Africa, Digital Nation, Community, Morocco, Algeria, Tunisia, Libya, Mauritania, Diaspora",
+        "og_title": "e-Maghreb | The Digital Nation",
+        "og_description": "Join e-Maghreb, the digital nation uniting Maghrebi citizens worldwide. Connect, vote, and build our shared digital future."
     }
 }

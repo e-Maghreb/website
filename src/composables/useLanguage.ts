@@ -13,31 +13,65 @@ const translations: Record<string, any> = {
   ar
 }
 
+function updateMetaTag(selector: string, content: string) {
+  const element = document.querySelector(selector)
+  if (element) {
+    element.setAttribute('content', content)
+  }
+}
+
 function updateDocumentAttributes(lang: string) {
   document.documentElement.lang = lang
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'
+
+  const t = translations[lang]?.meta
+  if (t) {
+    document.title = t.title
+    updateMetaTag('meta[name="title"]', t.title)
+    updateMetaTag('meta[name="description"]', t.description)
+    updateMetaTag('meta[name="keywords"]', t.keywords)
+
+    // OG tags
+    updateMetaTag('meta[property="og:title"]', t.og_title)
+    updateMetaTag('meta[property="og:description"]', t.og_description)
+
+    // Twitter tags
+    updateMetaTag('meta[property="twitter:title"]', t.og_title) // Using same as OG for simplicity unless different in JSON
+    updateMetaTag('meta[property="twitter:description"]', t.og_description)
+  }
 }
+
+let isWatcherSetup = false
 
 export function useLanguage() {
   const router = useRouter()
   const route = useRoute()
 
-  // Sync language with URL
-  watchEffect(() => {
-    const langParam = route.params.lang as string
-    if (langParam && ['fr', 'ar'].includes(langParam)) {
-      if (currentLang.value !== langParam) {
-        currentLang.value = langParam
+  // Singleton watcher to sync language with URL
+  if (!isWatcherSetup) {
+    isWatcherSetup = true
+    watchEffect(() => {
+      const langParam = route.params.lang as string
+
+      if (langParam && ['fr', 'ar'].includes(langParam)) {
+        if (currentLang.value !== langParam) {
+          currentLang.value = langParam
+        }
+        // Always update attributes when valid param exists to ensure DOM is in sync
         updateDocumentAttributes(langParam)
+      } else {
+        // Default to en if no valid param (is rooted)
+        // Check strict undefined to avoid overriding during transient states
+        if (langParam === undefined || langParam === null || langParam === '') {
+          if (currentLang.value !== 'en') {
+            currentLang.value = 'en'
+          }
+          // Always update attributes for English too
+          updateDocumentAttributes('en')
+        }
       }
-    } else {
-      // Default to en if no valid param (is rooted)
-      if (currentLang.value !== 'en' && !langParam) {
-        currentLang.value = 'en'
-        updateDocumentAttributes('en')
-      }
-    }
-  })
+    })
+  }
 
   const setLanguage = async (lang: string) => {
     if (!translations[lang]) return
