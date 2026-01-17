@@ -130,9 +130,9 @@ const showShareModal = ref(false)
 
 // Community stats - would be fetched from Reddit API in production
 const communityStats = computed(() => [
-  { count: '2', label: t('community.stats.members'), description: t('community.stats.growing') },
-  { count: '2', label: t('community.stats.online'), description: t('community.stats.active') },
-  { count: '0', label: t('community.stats.discussions'), description: t('community.stats.join') }
+  { count: '28', label: t('community.stats.members'), description: t('community.stats.growing') },
+  { count: '7', label: t('community.stats.online'), description: t('community.stats.active') },
+  { count: '2', label: t('community.stats.discussions'), description: t('community.stats.join') }
 ])
 
 const communityFeatures = computed(() => [
