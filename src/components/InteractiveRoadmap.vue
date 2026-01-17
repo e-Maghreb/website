@@ -216,7 +216,7 @@ interface Milestone {
   date?: string
 }
 
-const currentMembers = ref(2) // Based on Reddit community data
+const currentMembers = ref(28) // Based on Reddit community data
 const hoveredMilestone = ref<string | null>(null)
 const selectedMilestone = ref<Milestone | null>(null)
 
