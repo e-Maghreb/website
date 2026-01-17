@@ -112,23 +112,13 @@ interface QuickLink {
 
 const socialLinks: SocialLink[] = [
   {
-    name: 'Facebook',
-    url: 'https://facebook.com/e-maghreb',
-    icon: Facebook
-  },
-  {
-    name: 'Twitter',
-    url: 'https://twitter.com/e-maghreb',
-    icon: Twitter
-  },
-  {
     name: 'Instagram',
-    url: 'https://instagram.com/e-maghreb',
+    url: 'https://instagram.com/e_maghreb_org',
     icon: Instagram
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/company/e-maghreb',
+    url: 'https://www.linkedin.com/groups/17000001/',
     icon: Linkedin
   }
 ]
