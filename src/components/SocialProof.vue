@@ -277,12 +277,12 @@ const selectedStory = ref<UserStory | null>(null)
 const autoPlayInterval = ref<number | null>(null)
 
 const communityStats = ref<CommunityStats>({
-  totalCitizens: 28,
-  newThisWeek: 1,
+  totalCitizens: 49,
+  newThisWeek: 24,
   countries: 5,
   regions: 5,
-  activeDiscussions: 2,
-  topics: 2,
+  activeDiscussions: 4,
+  topics: 4,
   satisfaction: 95
 })
 
