@@ -67,7 +67,7 @@
               <strong>{{ t('footer.legal') }}</strong> {{ t('footer.legal_text') }}
             </p>
             <p>
-              © 2025 e-Maghreb. {{ t('footer.rights') }}
+              © 2026 e-Maghreb. {{ t('footer.rights') }}
             </p>
           </div>
 
@@ -125,7 +125,9 @@ const socialLinks: SocialLink[] = [
 
 const quickLinks = computed<QuickLink[]>(() => [
   { text: t('nav.about'), href: '#about' },
+  { text: t('nav.community'), href: '#community' },
   { text: t('nav.roadmap'), href: '#roadmap' },
+  { text: t('nav.feedback'), href: '#feedback' },
   { text: t('nav.join'), href: '#join' }
 ])
 

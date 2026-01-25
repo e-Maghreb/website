@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-20 md:py-28 bg-maghreb-light">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-maghreb-dark mb-6">
@@ -11,8 +11,8 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <div v-for="(feature, index) in features" :key="index" class="bg-maghreb-light/30 rounded-xl p-8 text-center hover:bg-maghreb-light transition-colors duration-300">
-          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-white flex items-center justify-center text-maghreb-green shadow-sm">
+        <div v-for="(feature, index) in features" :key="index" class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-maghreb-light flex items-center justify-center text-maghreb-green">
             <component :is="feature.icon" class="w-8 h-8" />
           </div>
           <h3 class="text-xl font-semibold text-maghreb-dark mb-3">
