@@ -154,7 +154,7 @@ import { useAccessibility } from './composables/useAccessibility'
 import { useLanguage } from './composables/useLanguage'
 
 // Initialize community metrics and accessibility
-const { metrics, trackEvent } = useCommunityMetrics()
+const { totalMembers } = useCommunityMetrics()
 const { accessibility, announceToScreenReader } = useAccessibility()
 const router = useRouter()
 const route = useRoute()
@@ -180,7 +180,6 @@ const isMobileMenuOpen = ref(false)
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
-  trackEvent('interaction', { action: 'toggle_mobile_menu', state: isMobileMenuOpen.value ? 'open' : 'closed' })
 
   if (isMobileMenuOpen.value) {
     document.body.style.overflow = 'hidden'
@@ -194,7 +193,6 @@ const toggleMobileMenu = () => {
 const showScrollTop = ref(false)
 
 const scrollToSection = async (href: string) => {
-  trackEvent('navigation', { target: href, source: 'nav_menu' })
 
   // Close mobile menu if open
   if (isMobileMenuOpen.value) {
@@ -217,7 +215,6 @@ const scrollToSection = async (href: string) => {
 }
 
 const scrollToTop = () => {
-  trackEvent('navigation', { target: 'top', source: 'scroll_button' })
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 

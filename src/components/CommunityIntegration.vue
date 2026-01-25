@@ -106,8 +106,8 @@
                 </div>
               </div>
               <div>
-                <h5 class="text-white font-bold text-sm">{{ t('community.citizen_label') }}</h5>
-                <p class="text-white/60 text-xs">{{ t('community.new_proposal') }}</p>
+                <h5 class="text-white font-bold text-sm">{{ totalMembers }} {{ t('roadmap.progress.citizens') }}</h5>
+                <p class="text-white/60 text-[10px]">{{ t('community.new_proposal') }}</p>
               </div>
             </div>
              <div class="flex items-center gap-2">
@@ -159,8 +159,10 @@
 import { ref, computed } from 'vue'
 import { Users, MessageCircle, Lightbulb, Calendar, Share2, Facebook, Twitter, Link2, Mail } from 'lucide-vue-next'
 import { useLanguage } from '../composables/useLanguage'
+import { useCommunityMetrics } from '../composables/useCommunityMetrics'
 
 const { t } = useLanguage()
+const { totalMembers } = useCommunityMetrics()
 
 interface CommunityFeature {
   title: string

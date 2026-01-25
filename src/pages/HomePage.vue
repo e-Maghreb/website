@@ -42,7 +42,7 @@ import FeedbackSection from '../components/FeedbackSection.vue'
 import { useCommunityMetrics } from '../composables/useCommunityMetrics'
 
 // Initialize community metrics
-const { trackEvent } = useCommunityMetrics()
+useCommunityMetrics()
 
 const scrollToSection = (href: string) => {
   const element = document.querySelector(href)
@@ -52,7 +52,6 @@ const scrollToSection = (href: string) => {
 }
 
 const handleJoinClick = () => {
-  trackEvent('cta_click', { action: 'join_community', source: 'navigation' })
   // In a real application, this would open a registration modal or redirect to a signup page
   alert('Registration opens on February 17, 2026! Join our waitlist to be notified.')
 }

@@ -203,8 +203,10 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { useLanguage } from '../composables/useLanguage'
+import { useCommunityMetrics } from '../composables/useCommunityMetrics'
 
 const { t } = useLanguage()
+const { totalMembers } = useCommunityMetrics()
 
 interface Milestone {
   id: string
@@ -216,7 +218,7 @@ interface Milestone {
   date?: string
 }
 
-const currentMembers = ref(49) // Based on Reddit community data
+const currentMembers = computed(() => totalMembers.value) // Based on Reddit community data
 const hoveredMilestone = ref<string | null>(null)
 const selectedMilestone = ref<Milestone | null>(null)
 
@@ -299,15 +301,7 @@ const shareMilestone = (milestone: Milestone) => {
   }
 }
 
-// Simulate real-time member count updates
-onMounted(() => {
-  setInterval(() => {
-    // Random fluctuation to simulate activity
-    if (Math.random() > 0.7) {
-      currentMembers.value += Math.floor(Math.random() * 3)
-    }
-  }, 30000) // Update every 30 seconds
-})
+// Community metrics are handled by the useCommunityMetrics composable
 </script>
 
 <style scoped>
