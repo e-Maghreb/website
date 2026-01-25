@@ -1,6 +1,7 @@
 {
   "name": "e-maghreb",
   "compatibility_date": "2026-01-01",
+  "not_found_handling": "single_page_application",
   "assets": {
     "directory": "./dist"
   }
