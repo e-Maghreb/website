@@ -258,6 +258,25 @@
             "notify": "Be among the first to know when registration opens"
         }
     },
+    "feedback_section": {
+        "title": "Help Shape Our Digital Nation",
+        "subtitle": "Your voice matters. Contribute directly to our roadmap by suggesting features and voting on what matters most to you.",
+        "features": {
+            "suggest": {
+                "title": "Suggest Ideas",
+                "desc": "Share your innovative ideas for e-Maghreb"
+            },
+            "vote": {
+                "title": "Vote on Features",
+                "desc": "Help prioritize the features you want to see"
+            },
+            "track": {
+                "title": "Track Progress",
+                "desc": "See how your suggestions are being implemented"
+            }
+        },
+        "cta": "Visit Feedback Board"
+    },
     "footer": {
         "description": "A digital nation uniting Maghrebi citizens globally through technology, culture, and community.",
         "quick_links": "Quick Links",

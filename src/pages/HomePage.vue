@@ -20,6 +20,11 @@
       <InteractiveRoadmap />
     </section>
 
+    <!-- Feedback Section -->
+    <section id="feedback">
+      <FeedbackSection />
+    </section>
+
     <!-- Social Proof Section -->
     <section id="social-proof">
       <SocialProof />
@@ -39,6 +44,7 @@ import InteractiveRoadmap from '../components/InteractiveRoadmap.vue'
 import CommunityIntegration from '../components/CommunityIntegration.vue'
 import SocialProof from '../components/SocialProof.vue'
 import JoinSection from '../components/JoinSection.vue'
+import FeedbackSection from '../components/FeedbackSection.vue'
 import { useCommunityMetrics } from '../composables/useCommunityMetrics'
 
 // Initialize community metrics
@@ -63,7 +69,7 @@ const handleJoinClick = () => {
   scroll-margin-top: 0;
 }
 
-#about, #community, #roadmap, #social-proof, #join {
+#about, #community, #roadmap, #social-proof, #join, #feedback {
   scroll-margin-top: 80px;
 }
 </style>
