@@ -1,8 +1,17 @@
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 // Community metrics state
 const totalMembers = ref(39) // Initial count from Reddit
 const lastUpdated = ref(new Date().toISOString())
+
+// Milestone definitions - Shared across components
+const milestonesRaw = [
+  { id: '1', target: 100, translationKey: 'roadmap.milestones.1' },
+  { id: '2', target: 500, translationKey: 'roadmap.milestones.2' },
+  { id: '3', target: 1000, translationKey: 'roadmap.milestones.3' },
+  { id: '4', target: 5000, translationKey: 'roadmap.milestones.4' },
+  { id: '5', target: 10000, translationKey: 'roadmap.milestones.5' }
+]
 
 const fetchRedditStats = async () => {
   try {
@@ -17,6 +26,31 @@ const fetchRedditStats = async () => {
   }
 }
 
+// Global computed properties
+const milestonesProgress = computed(() => {
+  return milestonesRaw.map(m => ({
+    ...m,
+    achieved: totalMembers.value >= m.target
+  }))
+})
+
+const nextMilestone = computed(() => {
+  return milestonesProgress.value.find(m => !m.achieved) || milestonesProgress.value[milestonesProgress.value.length - 1]
+})
+
+const lastAchievedMilestone = computed(() => {
+  const achieved = [...milestonesProgress.value].reverse().find(m => m.achieved)
+  return achieved || { id: '0', target: 0 }
+})
+
+const currentProgressPercentage = computed(() => {
+  const start = lastAchievedMilestone.value.target
+  const end = nextMilestone.value.target
+  if (start === end) return 100
+  const progress = ((totalMembers.value - start) / (end - start)) * 100
+  return Math.max(0, Math.min(100, progress))
+})
+
 // Singleton state management
 let initialized = false
 let updateInterval = null
@@ -25,7 +59,7 @@ let activeComponents = 0
 const initMetrics = () => {
   fetchRedditStats()
 
-  // Update every 5 minutes instead of every 10s to be more reasonable
+  // Update every 5 minutes
   updateInterval = setInterval(fetchRedditStats, 5 * 60 * 1000)
 
   return () => {
@@ -57,6 +91,10 @@ export function useCommunityMetrics() {
 
   return {
     totalMembers,
-    lastUpdated
+    lastUpdated,
+    milestones: milestonesProgress,
+    nextMilestone,
+    lastAchievedMilestone,
+    currentProgressPercentage
   }
 }

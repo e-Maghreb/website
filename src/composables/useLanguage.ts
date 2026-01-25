@@ -103,16 +103,26 @@ export function useLanguage() {
     })
   }
 
-  const t = (key: string) => {
+  const t = (key: string, params?: Record<string, string | number>) => {
     const keys = key.split('.')
     let value = translations[currentLang.value]
+
     for (const k of keys) {
-      if (value && value[k]) {
+      if (value && typeof value === 'object' && value[k] !== undefined) {
         value = value[k]
       } else {
         return key // Fallback
       }
     }
+
+    if (typeof value === 'string' && params) {
+      let interpolated = value
+      Object.keys(params).forEach(param => {
+        interpolated = interpolated.replace(new RegExp(`\\{${param}\\}`, 'g'), String(params[param]))
+      })
+      return interpolated
+    }
+
     return value
   }
 

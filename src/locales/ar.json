@@ -84,6 +84,9 @@
             "title": "تقدم المجتمع",
             "citizens": "مواطنين",
             "next_milestone": "المعلم التالي: {target} مواطن",
+            "next_goal": "الهدف القادم: {title}",
+            "percentage_to_milestone": "{percentage}% نحو المرحلة القادمة",
+            "target_label": "المستهدف: {target} مواطن",
             "needed": "{count} مطلوب"
         },
         "milestones": {

@@ -98,8 +98,8 @@
           </svg>
 
           <!-- Floating Status Card -->
-          <div class="absolute -bottom-6 -right-6 md:right-0 bg-black/40 backdrop-blur-xl border border-white/10 p-5 rounded-2xl shadow-2xl animate-float hidden md:block z-30">
-            <div class="flex items-center gap-4 mb-3">
+          <div class="absolute -bottom-6 -right-6 md:right-0 bg-black/60 backdrop-blur-xl border border-white/20 p-5 rounded-2xl shadow-2xl animate-float hidden md:block z-30 min-w-[220px]">
+            <div class="flex items-center gap-4 mb-4">
               <div class="relative">
                 <div class="w-10 h-10 rounded-full bg-maghreb-green/20 flex items-center justify-center text-green-400 font-bold text-xs border border-green-500/30">
                   <div class="w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
@@ -110,6 +110,21 @@
                 <p class="text-white/60 text-[10px]">{{ t('community.new_proposal') }}</p>
               </div>
             </div>
+
+            <!-- Mini Progress Bar -->
+            <div class="space-y-2 mb-4">
+              <div class="flex justify-between text-[10px]">
+                <span class="text-white/40 uppercase tracking-wider font-bold">{{ t('roadmap.progress.next_goal', { title: nextMilestoneTitle }) }}</span>
+                <span class="text-maghreb-green font-bold">{{ Math.round(progressPercentage) }}%</span>
+              </div>
+              <div class="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-maghreb-green to-maghreb-red h-full rounded-full transition-all duration-1000"
+                  :style="{ width: progressPercentage + '%' }"
+                ></div>
+              </div>
+            </div>
+
              <div class="flex items-center gap-2">
                  <div class="h-1.5 w-1.5 rounded-full bg-maghreb-red/50"></div>
                  <div class="h-1.5 w-1.5 rounded-full bg-white/50"></div>
@@ -162,7 +177,16 @@ import { useLanguage } from '../composables/useLanguage'
 import { useCommunityMetrics } from '../composables/useCommunityMetrics'
 
 const { t } = useLanguage()
-const { totalMembers } = useCommunityMetrics()
+const {
+  totalMembers,
+  nextMilestone,
+  currentProgressPercentage: progressPercentage
+} = useCommunityMetrics()
+
+const nextMilestoneTitle = computed(() => {
+  return t(`${nextMilestone.value.translationKey}.title`)
+})
+
 
 interface CommunityFeature {
   title: string

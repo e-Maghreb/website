@@ -80,6 +80,9 @@
             "title": "Progrès de la Communauté",
             "citizens": "Citoyens",
             "next_milestone": "Prochaine étape : {target} Citoyens",
+            "next_goal": "Prochain Objectif : {title}",
+            "percentage_to_milestone": "{percentage}% vers la prochaine étape",
+            "target_label": "Cible : {target} Citoyens",
             "needed": "{count} de plus nécessaires"
         },
         "milestones": {

@@ -84,6 +84,9 @@
             "title": "Community Progress",
             "citizens": "Citizens",
             "next_milestone": "Next Milestone: {target} Citizens",
+            "next_goal": "Next Goal: {title}",
+            "percentage_to_milestone": "{percentage}% to next milestone",
+            "target_label": "Target: {target} Citizens",
             "needed": "{count} more needed"
         },
         "milestones": {

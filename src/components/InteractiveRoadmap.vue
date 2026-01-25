@@ -11,21 +11,41 @@
         </p>
 
         <!-- Community Progress Overview -->
-        <div class="mt-8 bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-lg font-semibold text-maghreb-dark">{{ t('roadmap.progress.title') }}</span>
-            <span class="text-2xl font-bold text-maghreb-green">{{ currentMembers }} {{ t('roadmap.progress.citizens') }}</span>
+        <div class="mt-8 bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto border border-gray-100">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4">
+            <div class="text-left">
+              <span class="text-sm uppercase tracking-wider font-bold text-gray-400 block mb-1">{{ t('roadmap.progress.title') }}</span>
+              <h3 class="text-3xl font-black text-maghreb-dark flex items-center">
+                {{ currentMembers }}
+                <span class="text-lg font-medium text-gray-500 ml-2">{{ t('roadmap.progress.citizens') }}</span>
+              </h3>
+            </div>
+            <div class="text-left md:text-right">
+              <span class="text-sm font-bold text-maghreb-red block mb-1">{{ t('roadmap.progress.next_goal', { title: nextMilestoneTitle }) }}</span>
+              <span class="text-xl font-bold text-maghreb-green">{{ nextMilestone.target }} {{ t('roadmap.progress.citizens') }}</span>
+              <p class="text-xs text-gray-400 mt-1">{{ t('roadmap.progress.needed', { count: Math.max(0, nextMilestone.target - currentMembers) }) }}</p>
+            </div>
           </div>
-          <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
-            <div
-              class="bg-gradient-to-r from-maghreb-green to-maghreb-red h-4 rounded-full transition-all duration-1000 ease-out"
-              :style="{ width: progressPercentage + '%' }"
-            ></div>
+
+          <div class="relative pt-1">
+            <div class="flex mb-2 items-center justify-between">
+              <div>
+                <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-maghreb-green bg-maghreb-green/10">
+                  {{ t('roadmap.progress.percentage_to_milestone', { percentage: Math.round(progressPercentage) }) }}
+                </span>
+              </div>
+            </div>
+            <div class="overflow-hidden h-4 mb-4 text-xs flex rounded-full bg-gray-100 shadow-inner">
+              <div
+                :style="{ width: progressPercentage + '%' }"
+                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-maghreb-green via-maghreb-yellow to-maghreb-red transition-all duration-1000 ease-out"
+              ></div>
+            </div>
           </div>
-          <div class="flex justify-between text-sm text-black">
-            <span>0</span>
-            <span class="hidden sm:inline font-medium">{{ t('roadmap.progress.next_milestone').replace('{target}', nextMilestone.target) }}</span>
-            <span>{{ maxTarget }}</span>
+
+          <div class="flex justify-between text-[10px] font-bold text-gray-400 uppercase tracking-widest px-1">
+            <span>{{ lastAchievedMilestone.target }} {{ t('roadmap.progress.citizens') }}</span>
+            <span>{{ t('roadmap.progress.target_label', { target: nextMilestone.target }) }}</span>
           </div>
         </div>
       </div>
@@ -206,7 +226,13 @@ import { useLanguage } from '../composables/useLanguage'
 import { useCommunityMetrics } from '../composables/useCommunityMetrics'
 
 const { t } = useLanguage()
-const { totalMembers } = useCommunityMetrics()
+const {
+  totalMembers: currentMembers,
+  milestones: sharedMilestones,
+  nextMilestone,
+  lastAchievedMilestone,
+  currentProgressPercentage: progressPercentage
+} = useCommunityMetrics()
 
 interface Milestone {
   id: string
@@ -218,66 +244,27 @@ interface Milestone {
   date?: string
 }
 
-const currentMembers = computed(() => totalMembers.value) // Based on Reddit community data
 const hoveredMilestone = ref<string | null>(null)
 const selectedMilestone = ref<Milestone | null>(null)
 
-const milestones = computed<Milestone[]>(() => [
-  {
-    id: '1',
-    title: t('roadmap.milestones.1.title'),
-    description: t('roadmap.milestones.1.description'),
-    target: 100,
-    achieved: false,
-    features: t('roadmap.milestones.1.features'),
-    date: 'Q4 2025'
-  },
-  {
-    id: '2',
-    title: t('roadmap.milestones.2.title'),
-    description: t('roadmap.milestones.2.description'),
-    target: 500,
-    achieved: false,
-    features: t('roadmap.milestones.2.features'),
-    date: 'Q1 2026'
-  },
-  {
-    id: '3',
-    title: t('roadmap.milestones.3.title'),
-    description: t('roadmap.milestones.3.description'),
-    target: 1000,
-    achieved: false,
-    features: t('roadmap.milestones.3.features'),
-    date: 'Q2 2026'
-  },
-  {
-    id: '4',
-    title: t('roadmap.milestones.4.title'),
-    description: t('roadmap.milestones.4.description'),
-    target: 5000,
-    achieved: false,
-    features: t('roadmap.milestones.4.features'),
-    date: 'Q3 2026'
-  },
-  {
-    id: '5',
-    title: t('roadmap.milestones.5.title'),
-    description: t('roadmap.milestones.5.description'),
-    target: 10000,
-    achieved: false,
-    features: t('roadmap.milestones.5.features'),
-    date: 'Q4 2026'
-  }
-])
+// Map shared milestones to include translations
+const milestones = computed<Milestone[]>(() => {
+  return sharedMilestones.value.map(m => ({
+    ...m,
+    title: t(`${m.translationKey}.title`),
+    description: t(`${m.translationKey}.description`),
+    features: t(`${m.translationKey}.features`),
+    date: m.id === '1' ? 'Q4 2025' :
+          m.id === '2' ? 'Q1 2026' :
+          m.id === '3' ? 'Q2 2026' :
+          m.id === '4' ? 'Q3 2026' : 'Q4 2026'
+  }))
+})
 
 const maxTarget = computed(() => Math.max(...milestones.value.map(m => m.target)))
 
-const progressPercentage = computed(() => {
-  return Math.min(100, (currentMembers.value / maxTarget.value) * 100)
-})
-
-const nextMilestone = computed(() => {
-  return milestones.value.find(m => !m.achieved) || milestones.value[milestones.value.length - 1]
+const nextMilestoneTitle = computed(() => {
+  return t(`${nextMilestone.value.translationKey}.title`)
 })
 
 const selectMilestone = (milestone: Milestone) => {
@@ -300,8 +287,6 @@ const shareMilestone = (milestone: Milestone) => {
     window.open(twitterUrl, '_blank')
   }
 }
-
-// Community metrics are handled by the useCommunityMetrics composable
 </script>
 
 <style scoped>
