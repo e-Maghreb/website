@@ -71,7 +71,11 @@
             "help_text": "Help us grow by sharing with your network:",
             "close": "Close",
             "copied": "Link copied to clipboard!"
-        }
+        },
+        "social_invite": "Invite your friends to the digital nation",
+        "new_proposal": "New proposal active",
+        "citizen_label": "e-Maghreb Citizen",
+        "badge": "Community"
     },
     "roadmap": {
         "title": "Our Journey Together",
