@@ -3,7 +3,7 @@
         "about": "About",
         "community": "Community",
         "roadmap": "Roadmap",
-        "feedback": "Feedback",
+        "feedback": "Contribute",
         "join": "Join Now"
     },
     "hero": {
@@ -260,22 +260,22 @@
     },
     "feedback_section": {
         "title": "Help Shape Our Digital Nation",
-        "subtitle": "Your voice matters. Contribute directly to our roadmap by suggesting features and voting on what matters most to you.",
+        "subtitle": "Your voice matters. Contribute directly to our roadmap by suggesting ideas and voting on what matters most to you.",
         "features": {
             "suggest": {
                 "title": "Suggest Ideas",
                 "desc": "Share your innovative ideas for e-Maghreb"
             },
             "vote": {
-                "title": "Vote on Features",
-                "desc": "Help prioritize the features you want to see"
+                "title": "Vote on Ideas",
+                "desc": "Help prioritize the ideas you want to see"
             },
             "track": {
                 "title": "Track Progress",
                 "desc": "See how your suggestions are being implemented"
             }
         },
-        "cta": "Visit Feedback Board"
+        "cta": "Contribute & Vote"
     },
     "footer": {
         "description": "A digital nation uniting Maghrebi citizens globally through technology, culture, and community.",

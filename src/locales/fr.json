@@ -3,7 +3,7 @@
         "about": "À propos",
         "community": "Communauté",
         "roadmap": "Feuille de route",
-        "feedback": "Feedback",
+        "feedback": "Contribuer",
         "join": "Rejoindre"
     },
     "hero": {
@@ -260,22 +260,22 @@
     },
     "feedback_section": {
         "title": "Aidez à façonner notre nation numérique",
-        "subtitle": "Votre voix compte. Contribuez directement à notre feuille de route en suggérant des fonctionnalités et en votant pour ce qui compte le plus pour vous.",
+        "subtitle": "Votre voix compte. Contribuez directement à notre feuille de route en suggérant des idées et en votant pour ce qui compte le plus pour vous.",
         "features": {
             "suggest": {
                 "title": "Suggérer des idées",
                 "desc": "Partagez vos idées innovantes pour e-Maghreb"
             },
             "vote": {
-                "title": "Voter pour des fonctionnalités",
-                "desc": "Aidez à prioriser les fonctionnalités que vous voulez voir"
+                "title": "Voter pour des idées",
+                "desc": "Aidez à prioriser les idées que vous voulez voir"
             },
             "track": {
                 "title": "Suivre les progrès",
                 "desc": "Voyez comment vos suggestions sont mises en œuvre"
             }
         },
-        "cta": "Visiter le tableau de bord"
+        "cta": "Contribuer & Voter"
     },
     "footer": {
         "description": "Une nation numérique unissant les citoyens maghrébins mondialement à travers la technologie, la culture et la communauté.",

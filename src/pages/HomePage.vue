@@ -21,7 +21,7 @@
     </section>
 
     <!-- Feedback Section -->
-    <section id="feedback">
+    <section id="contribute">
       <FeedbackSection />
     </section>
 
@@ -63,7 +63,7 @@ const handleJoinClick = () => {
   scroll-margin-top: 0;
 }
 
-#about, #community, #roadmap, #feedback, #join {
+#about, #community, #roadmap, #contribute, #join {
   scroll-margin-top: 80px;
 }
 </style>

@@ -127,7 +127,7 @@ const quickLinks = computed<QuickLink[]>(() => [
   { text: t('nav.about'), href: '#about' },
   { text: t('nav.community'), href: '#community' },
   { text: t('nav.roadmap'), href: '#roadmap' },
-  { text: t('nav.feedback'), href: '#feedback' },
+  { text: t('nav.feedback'), href: '#contribute' },
   { text: t('nav.join'), href: '#join' }
 ])
 
