@@ -25,11 +25,6 @@
       <FeedbackSection />
     </section>
 
-    <!-- Social Proof Section -->
-    <section id="social-proof">
-      <SocialProof />
-    </section>
-
     <!-- Join Section -->
     <section id="join">
       <JoinSection @cta-click="handleJoinClick" />
@@ -42,7 +37,6 @@ import HeroSection from '../components/HeroSection.vue'
 import AboutSection from '../components/AboutSection.vue'
 import InteractiveRoadmap from '../components/InteractiveRoadmap.vue'
 import CommunityIntegration from '../components/CommunityIntegration.vue'
-import SocialProof from '../components/SocialProof.vue'
 import JoinSection from '../components/JoinSection.vue'
 import FeedbackSection from '../components/FeedbackSection.vue'
 import { useCommunityMetrics } from '../composables/useCommunityMetrics'
@@ -69,7 +63,7 @@ const handleJoinClick = () => {
   scroll-margin-top: 0;
 }
 
-#about, #community, #roadmap, #social-proof, #join, #feedback {
+#about, #community, #roadmap, #feedback, #join {
   scroll-margin-top: 80px;
 }
 </style>

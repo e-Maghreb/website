@@ -172,7 +172,7 @@ const navItems = computed(() => [
   { text: t('nav.about'), href: '#about' },
   { text: t('nav.community'), href: '#community' },
   { text: t('nav.roadmap'), href: '#roadmap' },
-  { text: t('nav.stories'), href: '#social-proof' },
+  { text: t('nav.feedback'), href: '#feedback' },
 ])
 
 // Mobile menu state
@@ -253,7 +253,7 @@ body {
   scroll-margin-top: 0;
 }
 
-#about, #community, #roadmap, #social-proof, #join {
+#about, #community, #roadmap, #feedback, #join {
   scroll-margin-top: 80px;
 }
 
