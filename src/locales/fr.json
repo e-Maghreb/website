@@ -41,14 +41,6 @@
     "community": {
         "title": "Rejoignez notre communauté Reddit",
         "subtitle": "Connectez-vous avec d'autres citoyens maghrébins et faites partie de notre nation numérique en pleine croissance",
-        "stats": {
-            "members": "Membres",
-            "online": "En ligne",
-            "discussions": "Discussions",
-            "growing": "Communauté grandissante",
-            "active": "Actif maintenant",
-            "join": "Rejoindre la conversation"
-        },
         "features_title": "Ce que vous trouverez dans notre communauté",
         "features": {
             "discussions": {

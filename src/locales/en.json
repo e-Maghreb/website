@@ -41,14 +41,6 @@
     "community": {
         "title": "Join Our Reddit Community",
         "subtitle": "Connect with fellow Maghrebi citizens and be part of our growing digital nation",
-        "stats": {
-            "members": "Members",
-            "online": "Online",
-            "discussions": "Discussions",
-            "growing": "Growing community",
-            "active": "Active right now",
-            "join": "Join the conversation"
-        },
         "features_title": "What You'll Find in Our Community",
         "features": {
             "discussions": {

@@ -10,21 +10,6 @@
         </p>
       </div>
 
-      <!-- Community Stats -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <div
-          v-for="(stat, index) in communityStats"
-          :key="index"
-          class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center text-white hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
-        >
-          <div class="text-4xl md:text-5xl font-bold mb-2 text-white">
-            {{ stat.count }}
-          </div>
-          <div class="text-lg opacity-90">{{ stat.label }}</div>
-          <div class="text-sm opacity-70 mt-2">{{ stat.description }}</div>
-        </div>
-      </div>
-
       <!-- Community Features -->
       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-12">
         <h3 class="text-2xl font-bold text-white mb-8 text-center">{{ t('community.features_title') }}</h3>
@@ -102,17 +87,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
+import { ref, computed } from 'vue'
 import { Users, MessageCircle, Lightbulb, Calendar, Share2, Facebook, Twitter, Link2, Mail } from 'lucide-vue-next'
 import { useLanguage } from '../composables/useLanguage'
 
 const { t } = useLanguage()
-
-interface CommunityStat {
-  count: string
-  label: string
-  description: string
-}
 
 interface CommunityFeature {
   title: string
@@ -127,13 +106,6 @@ interface SharePlatform {
 }
 
 const showShareModal = ref(false)
-
-// Community stats - would be fetched from Reddit API in production
-const communityStats = computed(() => [
-  { count: '49', label: t('community.stats.members'), description: t('community.stats.growing') },
-  { count: '7', label: t('community.stats.online'), description: t('community.stats.active') },
-  { count: '4', label: t('community.stats.discussions'), description: t('community.stats.join') }
-])
 
 const communityFeatures = computed(() => [
   {
@@ -181,23 +153,6 @@ const sharePlatforms: SharePlatform[] = [
   }
 ]
 
-// Simulate fetching Reddit data
-const fetchRedditData = async () => {
-  try {
-    // In production, this would call the Reddit API
-    // For now, we'll use placeholder data based on the web search
-    console.log('Fetching Reddit community data...')
-
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 1000))
-
-    // Update with real data when Reddit API is available
-    // This would typically come from: https://www.reddit.com/r/eMaghreb/about.json
-  } catch (error) {
-    console.error('Error fetching Reddit data:', error)
-  }
-}
-
 const shareCommunity = () => {
   showShareModal.value = true
 }
@@ -215,10 +170,6 @@ const shareOnPlatform = (platform: SharePlatform) => {
   }
   closeShareModal()
 }
-
-onMounted(() => {
-  fetchRedditData()
-})
 </script>
 
 <style scoped>

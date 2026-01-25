@@ -41,14 +41,6 @@
     "community": {
         "title": "انضم لمجتمعنا على Reddit",
         "subtitle": "تواصل مع زملائك المواطنين المغاربيين وكن جزءًا من أمتنا الرقمية المتنامية",
-        "stats": {
-            "members": "أعضاء",
-            "online": "متصل",
-            "discussions": "مناقشات",
-            "growing": "مجتمع متنامي",
-            "active": "نشط الآن",
-            "join": "انضم للمحادثة"
-        },
         "features_title": "ما ستجده في مجتمعنا",
         "features": {
             "discussions": {
