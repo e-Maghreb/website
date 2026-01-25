@@ -42,8 +42,9 @@
               rel="noopener noreferrer"
               class="bg-maghreb-red hover:bg-maghreb-red/90 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
             >
-              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2A10 10 0 0 0 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0 0 12 2zm5.75 13.3c-.23.3-.54.4-.88.23-1.3-.6-2.7-.9-4.2-.9s-2.9.3-4.2.9c-.34.17-.65.07-.88-.23-.3-.3-.2-.65.17-.88 1.6-.8 3.4-1.2 5.3-1.2s3.7.4 5.3 1.2c.37.23.47.58.17.88zM8.5 12.5c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm7 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"/>
+              <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M6.167 8a.83.83 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661m1.843 3.647c.315 0 1.403-.038 1.976-.611a.23.23 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83s.83-.381.83-.83a.831.831 0 0 0-1.66 0z"/>
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.828-1.165c-.315 0-.602.124-.812.325-.801-.573-1.9-.945-3.121-.993l.534-2.501 1.738.372a.83.83 0 1 0 .83-.869.83.83 0 0 0-.744.468l-1.938-.41a.2.2 0 0 0-.153.028.2.2 0 0 0-.086.134l-.592 2.788c-1.24.038-2.358.41-3.17.992-.21-.2-.496-.324-.81-.324a1.163 1.163 0 0 0-.478 2.224q-.03.17-.029.353c0 1.795 2.091 3.256 4.669 3.256s4.668-1.451 4.668-3.256c0-.114-.01-.238-.029-.353.401-.181.688-.592.688-1.069 0-.65-.525-1.165-1.165-1.165"/>
               </svg>
               {{ t('community.ready.join_btn') }}
             </a>
@@ -134,12 +135,12 @@ const sharePlatforms: SharePlatform[] = [
   {
     name: 'Facebook',
     icon: Facebook,
-    url: 'https://www.facebook.com/sharer/sharer.php?u=https://www.reddit.com/r/eMaghreb/'
+    url: 'https://www.facebook.com/sharer/sharer.php?u=https://e-maghreb.org/'
   },
   {
     name: 'Twitter',
     icon: Twitter,
-    url: 'https://twitter.com/intent/tweet?text=Join%20e-Maghreb%20Reddit%20community%20-%20a%20digital%20nation%20for%20Maghrebi%20citizens!&url=https://www.reddit.com/r/eMaghreb/'
+    url: 'https://twitter.com/intent/tweet?text=Join e-Maghreb community - a digital nation for Maghrebi citizens!&url=https://e-maghreb.org/'
   },
   {
     name: 'Copy Link',
@@ -149,7 +150,7 @@ const sharePlatforms: SharePlatform[] = [
   {
     name: 'Email',
     icon: Mail,
-    url: 'mailto:?subject=Join e-Maghreb Community&body=Check out e-Maghreb Reddit community: https://www.reddit.com/r/eMaghreb/'
+    url: 'mailto:?subject=Join e-Maghreb Community&body=Join e-Maghreb community - a digital nation for Maghrebi citizens!%0D%0A%0D%0Ahttps://e-maghreb.org/'
   }
 ]
 
@@ -163,7 +164,7 @@ const closeShareModal = () => {
 
 const shareOnPlatform = (platform: SharePlatform) => {
   if (platform.url === 'copy') {
-    navigator.clipboard.writeText('https://www.reddit.com/r/eMaghreb/')
+    navigator.clipboard.writeText('https://e-maghreb.org/')
     alert(t('community.share_modal.copied'))
   } else {
     window.open(platform.url, '_blank', 'width=600,height=400')
