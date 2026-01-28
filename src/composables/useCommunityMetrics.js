@@ -15,7 +15,7 @@ const milestonesRaw = [
 
 const fetchRedditStats = async () => {
   try {
-    const response = await fetch('https://www.reddit.com/r/eMaghreb/about.json')
+    const response = await fetch('/api/stats')
     const json = await response.json()
     if (json.data && json.data.subscribers) {
       totalMembers.value = json.data.subscribers

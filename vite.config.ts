@@ -17,4 +17,18 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'), // ✅ 定义 @ = src
     },
   },
+  server: {
+    proxy: {
+      '/api/stats': {
+        target: 'https://www.reddit.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/stats/, '/r/eMaghreb/about.json'),
+        configure: (proxy, _options) => {
+          proxy.on('proxyReq', (proxyReq, _req, _res) => {
+            proxyReq.setHeader('User-Agent', 'e-maghreb-website/1.0')
+          })
+        },
+      },
+    },
+  },
 })
